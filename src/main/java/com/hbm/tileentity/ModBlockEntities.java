@@ -2,6 +2,7 @@ package com.hbm.tileentity;
 
 import com.hbm.main.MainRegistry;
 import com.hbm.blocks.ModBlocks;
+import com.hbm.tileentity.bomb.*;
 import com.hbm.tileentity.machine.TileEntityCore;
 import com.hbm.tileentity.machine.TileEntityCoreEmitter;
 import com.hbm.tileentity.machine.TileEntityCoreInjector;
@@ -140,9 +141,65 @@ public class ModBlockEntities {
 							ModBlocks.BOMB_TSAR.get(),
 							ModBlocks.BOMB_GADGET.get()).build(null));
 
-	public static final Supplier<BlockEntityType<com.hbm.tileentity.bomb.TileEntityLaunchPad>> LAUNCH_PAD =
+	public static final Supplier<BlockEntityType<TileEntityNukeBoy>> NUKE_BOY =
+			BLOCK_ENTITIES.register("nuke_boy", () ->
+					BlockEntityType.Builder.of(TileEntityNukeBoy::new, ModBlocks.NUKE_BOY.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeMan>> NUKE_MAN =
+			BLOCK_ENTITIES.register("nuke_man", () ->
+					BlockEntityType.Builder.of(TileEntityNukeMan::new, ModBlocks.NUKE_MAN.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeMike>> NUKE_MIKE =
+			BLOCK_ENTITIES.register("nuke_mike", () ->
+					BlockEntityType.Builder.of(TileEntityNukeMike::new, ModBlocks.NUKE_MIKE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeTsar>> NUKE_TSAR =
+			BLOCK_ENTITIES.register("nuke_tsar", () ->
+					BlockEntityType.Builder.of(TileEntityNukeTsar::new, ModBlocks.NUKE_TSAR.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeGadget>> NUKE_GADGET =
+			BLOCK_ENTITIES.register("nuke_gadget", () ->
+					BlockEntityType.Builder.of(TileEntityNukeGadget::new, ModBlocks.NUKE_GADGET.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeFleija>> NUKE_FLEIJA =
+			BLOCK_ENTITIES.register("nuke_fleija", () ->
+					BlockEntityType.Builder.of(TileEntityNukeFleija::new, ModBlocks.NUKE_FLEIJA.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeBalefire>> NUKE_BALEFIRE =
+			BLOCK_ENTITIES.register("nuke_fstbmb", () ->
+					BlockEntityType.Builder.of(TileEntityNukeBalefire::new, ModBlocks.NUKE_BALEFIRE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeN2>> NUKE_N2 =
+			BLOCK_ENTITIES.register("nuke_n2", () ->
+					BlockEntityType.Builder.of(TileEntityNukeN2::new, ModBlocks.NUKE_N2.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeSolinium>> NUKE_SOLINIUM =
+			BLOCK_ENTITIES.register("nuke_solinium", () ->
+					BlockEntityType.Builder.of(TileEntityNukeSolinium::new, ModBlocks.NUKE_SOLINIUM.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukePrototype>> NUKE_PROTOTYPE =
+			BLOCK_ENTITIES.register("nuke_prototype", () ->
+					BlockEntityType.Builder.of(TileEntityNukePrototype::new, ModBlocks.NUKE_PROTOTYPE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityNukeCustom>> NUKE_CUSTOM =
+			BLOCK_ENTITIES.register("nuke_custom", () ->
+					BlockEntityType.Builder.of(TileEntityNukeCustom::new, ModBlocks.NUKE_CUSTOM.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityLaunchPad>> LAUNCH_PAD =
 			BLOCK_ENTITIES.register("launch_pad", () ->
-					BlockEntityType.Builder.of(com.hbm.tileentity.bomb.TileEntityLaunchPad::new, ModBlocks.LAUNCH_PAD.get()).build(null));
+					BlockEntityType.Builder.of(TileEntityLaunchPad::new, ModBlocks.LAUNCH_PAD.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityLaunchPadLarge>> LAUNCH_PAD_LARGE =
+			BLOCK_ENTITIES.register("launch_pad_large", () ->
+					BlockEntityType.Builder.of(TileEntityLaunchPadLarge::new, ModBlocks.LAUNCH_PAD_LARGE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityLaunchTable>> LAUNCH_TABLE =
+			BLOCK_ENTITIES.register("launch_table", () ->
+					BlockEntityType.Builder.of(TileEntityLaunchTable::new, ModBlocks.LAUNCH_TABLE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<TileEntityCompactLauncher>> COMPACT_LAUNCHER =
+			BLOCK_ENTITIES.register("compact_launcher", () ->
+					BlockEntityType.Builder.of(TileEntityCompactLauncher::new, ModBlocks.COMPACT_LAUNCHER.get()).build(null));
 
 	public static void register(IEventBus bus) {
 		BLOCK_ENTITIES.register(bus);

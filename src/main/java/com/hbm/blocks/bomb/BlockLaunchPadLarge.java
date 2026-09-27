@@ -2,15 +2,11 @@ package com.hbm.blocks.bomb;
 
 import com.hbm.interfaces.IBomb;
 import com.hbm.tileentity.ModBlockEntities;
-import com.hbm.tileentity.bomb.TileEntityLaunchPad;
+import com.hbm.tileentity.bomb.TileEntityLaunchPadLarge;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -23,15 +19,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockLaunchPad extends BaseEntityBlock implements IBomb {
+public class BlockLaunchPadLarge extends BaseEntityBlock implements IBomb {
 
-	public static final MapCodec<BlockLaunchPad> CODEC = simpleCodec(BlockLaunchPad::new);
+	public static final MapCodec<BlockLaunchPadLarge> CODEC = simpleCodec(BlockLaunchPadLarge::new);
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-	public BlockLaunchPad(Properties properties) {
+	public BlockLaunchPadLarge(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
@@ -59,20 +54,20 @@ public class BlockLaunchPad extends BaseEntityBlock implements IBomb {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new TileEntityLaunchPad(pos, state);
+		return new TileEntityLaunchPadLarge(pos, state);
 	}
 
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-		return createTickerHelper(blockEntityType, ModBlockEntities.LAUNCH_PAD.get(), TileEntityLaunchPad::tick);
+		return createTickerHelper(blockEntityType, ModBlockEntities.LAUNCH_PAD_LARGE.get(), TileEntityLaunchPadLarge::tick);
 	}
 
 	@Override
 	public BombReturnCode explode(Level level, BlockPos pos, Entity detonator) {
 		if (!level.isClientSide) {
 			BlockEntity be = level.getBlockEntity(pos);
-			if (be instanceof TileEntityLaunchPad pad) {
+			if (be instanceof TileEntityLaunchPadLarge pad) {
 				return pad.launchFromDesignator();
 			}
 		}
@@ -83,7 +78,7 @@ public class BlockLaunchPad extends BaseEntityBlock implements IBomb {
 	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
 		if (!level.isClientSide) {
 			BlockEntity be = level.getBlockEntity(pos);
-			if (be instanceof TileEntityLaunchPad pad) {
+			if (be instanceof TileEntityLaunchPadLarge pad) {
 				pad.updateRedstonePower(neighborPos);
 			}
 		}

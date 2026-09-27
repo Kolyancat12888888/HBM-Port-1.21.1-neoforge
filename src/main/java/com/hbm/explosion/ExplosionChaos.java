@@ -1,17 +1,20 @@
 package com.hbm.explosion;
 
-import com.hbm.blocks.ModBlocks;
 import com.hbm.config.CompatibilityConfig;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.Random;
 import java.util.function.Consumer;
 
 public class ExplosionChaos {
+
+	private static final Random rand = new Random();
 
 	private static void forEachBlockInSphere(Level world, Entity detonator, int x, int y, int z, int radius, Consumer<BlockPos.MutableBlockPos> action) {
 		BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -53,5 +56,46 @@ public class ExplosionChaos {
 		} else {
 			world.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
 		}
+	}
+
+	public static void cluster(Level world, int x, int y, int z, int count, double gravity) {
+		if (world.isClientSide) return;
+		for (int i = 0; i < count; i++) {
+			double rx = x + (rand.nextDouble() - 0.5) * 20.0;
+			double ry = y + (rand.nextDouble() - 0.5) * 10.0;
+			double rz = z + (rand.nextDouble() - 0.5) * 20.0;
+			world.explode(null, rx, ry, rz, 3.5F, Level.ExplosionInteraction.BLOCK);
+		}
+	}
+
+	public static void flameDeath(Level world, Entity detonator, BlockPos pos, int bound) {
+		if (!CompatibilityConfig.isWarDim(world)) return;
+		BlockPos.MutableBlockPos mPosUp = new BlockPos.MutableBlockPos();
+
+		forEachBlockInSphere(world, detonator, pos.getX(), pos.getY(), pos.getZ(), bound, mPos -> {
+			mPosUp.set(mPos.getX(), mPos.getY() + 1, mPos.getZ());
+			if (world.getBlockState(mPos).isFlammable(world, mPos, Direction.UP) && world.getBlockState(mPosUp).isAir()) {
+				world.setBlock(mPosUp, Blocks.FIRE.defaultBlockState(), 3);
+			}
+		});
+	}
+
+	public static void burn(Level world, Entity detonator, BlockPos pos, int bound) {
+		if (!CompatibilityConfig.isWarDim(world)) return;
+		BlockPos.MutableBlockPos mPosUp = new BlockPos.MutableBlockPos();
+
+		forEachBlockInSphere(world, detonator, pos.getX(), pos.getY(), pos.getZ(), bound, mPos -> {
+			mPosUp.set(mPos.getX(), mPos.getY() + 1, mPos.getZ());
+			BlockState upState = world.getBlockState(mPosUp);
+			if (upState.isAir() && !world.getBlockState(mPos).isAir()) {
+				world.setBlock(mPosUp, Blocks.FIRE.defaultBlockState(), 3);
+			}
+		});
+	}
+
+	public static void spawnChlorine(Level world, double x, double y, double z, int count, double speed, int type) {
+		// Gas cloud effect / damage
+		if (world.isClientSide) return;
+		explode(world, null, (int) x, (int) y, (int) z, 10);
 	}
 }

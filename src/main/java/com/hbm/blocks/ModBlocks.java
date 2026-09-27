@@ -54,7 +54,10 @@ public class ModBlocks {
 	public static final DeferredBlock<Block> BLOCK_LEAD = reg("block_lead", 4.0F, 20.0F);
 
 	// Concrete & Structural
+	public static final DeferredBlock<Block> CONCRETE = regStone("concrete", 15.0F, 160.0F);
+	public static final DeferredBlock<Block> CONCRETE_SMOOTH = regStone("concrete_smooth", 15.0F, 160.0F);
 	public static final DeferredBlock<Block> BRICK_CONCRETE = regStone("brick_concrete", 15.0F, 160.0F);
+	public static final DeferredBlock<Block> BRICK_CONCRETE_BROKEN = regStone("brick_concrete_broken", 10.0F, 80.0F);
 	public static final DeferredBlock<Block> REINFORCED_STONE = regStone("reinforced_stone", 15.0F, 100.0F);
 	public static final DeferredBlock<Block> REINFORCED_BRICK = regStone("reinforced_brick", 15.0F, 300.0F);
 
@@ -98,7 +101,23 @@ public class ModBlocks {
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockBombMulti> BOMB_MIKE = register("bomb_mike", () -> new com.hbm.blocks.bomb.BlockBombMulti(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F), com.hbm.tileentity.bomb.TileEntityBombMulti.BombType.MIKE));
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockBombMulti> BOMB_TSAR = register("bomb_tsar", () -> new com.hbm.blocks.bomb.BlockBombMulti(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F), com.hbm.tileentity.bomb.TileEntityBombMulti.BombType.TSAR));
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockBombMulti> BOMB_GADGET = register("bomb_gadget", () -> new com.hbm.blocks.bomb.BlockBombMulti(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F), com.hbm.tileentity.bomb.TileEntityBombMulti.BombType.GADGET));
+
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeBoy> NUKE_BOY = register("nuke_boy", () -> new com.hbm.blocks.bomb.BlockNukeBoy(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeMan> NUKE_MAN = register("nuke_man", () -> new com.hbm.blocks.bomb.BlockNukeMan(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeMike> NUKE_MIKE = register("nuke_mike", () -> new com.hbm.blocks.bomb.BlockNukeMike(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeTsar> NUKE_TSAR = register("nuke_tsar", () -> new com.hbm.blocks.bomb.BlockNukeTsar(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeGadget> NUKE_GADGET = register("nuke_gadget", () -> new com.hbm.blocks.bomb.BlockNukeGadget(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeFleija> NUKE_FLEIJA = register("nuke_fleija", () -> new com.hbm.blocks.bomb.BlockNukeFleija(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeBalefire> NUKE_BALEFIRE = register("nuke_fstbmb", () -> new com.hbm.blocks.bomb.BlockNukeBalefire(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeN2> NUKE_N2 = register("nuke_n2", () -> new com.hbm.blocks.bomb.BlockNukeN2(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeSolinium> NUKE_SOLINIUM = register("nuke_solinium", () -> new com.hbm.blocks.bomb.BlockNukeSolinium(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukePrototype> NUKE_PROTOTYPE = register("nuke_prototype", () -> new com.hbm.blocks.bomb.BlockNukePrototype(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockNukeCustom> NUKE_CUSTOM = register("nuke_custom", () -> new com.hbm.blocks.bomb.BlockNukeCustom(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 6000.0F)));
+
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockLaunchPad> LAUNCH_PAD = register("launch_pad", () -> new com.hbm.blocks.bomb.BlockLaunchPad(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockLaunchPadLarge> LAUNCH_PAD_LARGE = register("launch_pad_large", () -> new com.hbm.blocks.bomb.BlockLaunchPadLarge(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockLaunchTable> LAUNCH_TABLE = register("launch_table", () -> new com.hbm.blocks.bomb.BlockLaunchTable(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
+	public static final DeferredBlock<com.hbm.blocks.bomb.BlockCompactLauncher> COMPACT_LAUNCHER = register("compact_launcher", () -> new com.hbm.blocks.bomb.BlockCompactLauncher(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
 
 	// Fallout, Waste & Post-Explosion Strata
 	public static final DeferredBlock<Block> WASTE_EARTH = regStone("waste_earth", 0.6F, 0.6F);
@@ -167,7 +186,10 @@ public class ModBlocks {
 	public static Block block_steel;
 	public static Block block_lead;
 
+	public static Block concrete;
+	public static Block concrete_smooth;
 	public static Block brick_concrete;
+	public static Block brick_concrete_broken;
 	public static Block reinforced_stone;
 	public static Block reinforced_brick;
 
@@ -234,7 +256,10 @@ public class ModBlocks {
 		block_steel = BLOCK_STEEL.get();
 		block_lead = BLOCK_LEAD.get();
 
+		concrete = CONCRETE.get();
+		concrete_smooth = CONCRETE_SMOOTH.get();
 		brick_concrete = BRICK_CONCRETE.get();
+		brick_concrete_broken = BRICK_CONCRETE_BROKEN.get();
 		reinforced_stone = REINFORCED_STONE.get();
 		reinforced_brick = REINFORCED_BRICK.get();
 

@@ -4,6 +4,16 @@ import com.hbm.items.machine.*;
 import com.hbm.items.machine.ItemMachineUpgrade.UpgradeType;
 import com.hbm.items.special.*;
 import com.hbm.items.tool.*;
+import com.hbm.items.weapon.ItemMissile;
+import com.hbm.items.weapon.ItemMissile.FuelType;
+import com.hbm.items.weapon.ItemMissile.PartSize;
+import com.hbm.items.weapon.ItemMissile.WarheadType;
+import com.hbm.items.weapon.ItemMissile.Rarity;
+import com.hbm.items.weapon.ItemMissileStandard;
+import com.hbm.items.weapon.ItemMissileStandard.MissileFormFactor;
+import com.hbm.items.weapon.ItemMissileStandard.MissileTier;
+import com.hbm.items.weapon.ItemMissileStandard.MissileFuel;
+import com.hbm.items.weapon.ItemCustomMissile;
 import com.hbm.main.MainRegistry;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -268,15 +278,228 @@ public class ModItems {
 	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_BOOTS = register("ajr_boots", () -> (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 2500000, 10000, 2000, 25).cloneStats(AJR_HELMET.get()));
 
 
-	// Miscellaneous & Materials
+	// Designators & Targeting
+	public static final DeferredItem<com.hbm.items.tool.ItemDesignator> DESIGNATOR = register("designator", () -> new com.hbm.items.tool.ItemDesignator(new Item.Properties()));
+	public static final DeferredItem<com.hbm.items.tool.ItemDesignatorRange> DESIGNATOR_RANGE = register("designator_range", () -> new com.hbm.items.tool.ItemDesignatorRange(new Item.Properties()));
+	public static final DeferredItem<com.hbm.items.tool.ItemDesignatorManual> DESIGNATOR_MANUAL = register("designator_manual", () -> new com.hbm.items.tool.ItemDesignatorManual(new Item.Properties()));
+
+	// Launch Items & Codes
+	public static final DeferredItem<ItemBase> LAUNCH_CODE = reg("launch_code");
+	public static final DeferredItem<ItemBase> LAUNCH_KEY = reg("launch_key");
+	public static final DeferredItem<ItemBase> MISSILE_ASSEMBLY = reg("missile_assembly");
+	public static final DeferredItem<ItemBase> ROCKET_FUEL = reg("rocket_fuel");
+
+	// Standard Missiles - Tier 0
+	public static final DeferredItem<ItemMissileStandard> MISSILE_MICRO = register("missile_micro", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.MICRO, MissileTier.TIER0));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_SCHRABIDIUM = register("missile_schrabidium", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.MICRO, MissileTier.TIER0));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_BHOLE = register("missile_bhole", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.MICRO, MissileTier.TIER0));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_TAINT = register("missile_taint", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.MICRO, MissileTier.TIER0));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_EMP = register("missile_emp", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.MICRO, MissileTier.TIER0));
+
+	// Standard Missiles - Tier 1
+	public static final DeferredItem<ItemMissileStandard> MISSILE_GENERIC = register("missile_generic", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.V2, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_DECOY = register("missile_decoy", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.V2, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_INCENDIARY = register("missile_incendiary", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.V2, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_CLUSTER = register("missile_cluster", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.V2, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_BUSTER = register("missile_buster", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.V2, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_ANTI_BALLISTIC = register("missile_anti_ballistic", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ABM, MissileTier.TIER1));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_STEALTH = register("missile_stealth", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER1));
+
+	// Standard Missiles - Tier 2
+	public static final DeferredItem<ItemMissileStandard> MISSILE_STRONG = register("missile_strong", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER2));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_INCENDIARY_STRONG = register("missile_incendiary_strong", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER2));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_CLUSTER_STRONG = register("missile_cluster_strong", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER2));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_BUSTER_STRONG = register("missile_buster_strong", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER2));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_EMP_STRONG = register("missile_emp_strong", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.STRONG, MissileTier.TIER2));
+
+	// Standard Missiles - Tier 3
+	public static final DeferredItem<ItemMissileStandard> MISSILE_BURST = register("missile_burst", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.HUGE, MissileTier.TIER3));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_INFERNO = register("missile_inferno", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.HUGE, MissileTier.TIER3));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_RAIN = register("missile_rain", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.HUGE, MissileTier.TIER3));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_DRILL = register("missile_drill", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.HUGE, MissileTier.TIER3));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_SHUTTLE = register("missile_shuttle", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.OTHER, MissileTier.TIER3, MissileFuel.KEROSENE_PEROXIDE));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_N2 = register("missile_n2", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.HUGE, MissileTier.TIER3));
+
+	// Standard Missiles - Tier 4
+	public static final DeferredItem<ItemMissileStandard> MISSILE_NUCLEAR = register("missile_nuclear", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ATLAS, MissileTier.TIER4));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_NUCLEAR_CLUSTER = register("missile_nuclear_cluster", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ATLAS, MissileTier.TIER4));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_VOLCANO = register("missile_volcano", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ATLAS, MissileTier.TIER4));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_DOOMSDAY = register("missile_doomsday", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ATLAS, MissileTier.TIER4));
+	public static final DeferredItem<ItemMissileStandard> MISSILE_DOOMSDAY_RUSTED = register("missile_doomsday_rusted", () -> new ItemMissileStandard(new Item.Properties(), MissileFormFactor.ATLAS, MissileTier.TIER4).notLaunchable());
+
+	// Custom Modular Missile
+	public static final DeferredItem<ItemCustomMissile> MISSILE_CUSTOM = register("missile_custom", () -> new ItemCustomMissile(new Item.Properties()));
+
+	// Warhead Crafting Parts
+	public static final DeferredItem<ItemBase> WARHEAD_GENERIC_SMALL = reg("warhead_generic_small");
+	public static final DeferredItem<ItemBase> WARHEAD_INCENDIARY_SMALL = reg("warhead_incendiary_small");
+	public static final DeferredItem<ItemBase> WARHEAD_CLUSTER_SMALL = reg("warhead_cluster_small");
+	public static final DeferredItem<ItemBase> WARHEAD_BUSTER_SMALL = reg("warhead_buster_small");
+	public static final DeferredItem<ItemBase> WARHEAD_GENERIC_MEDIUM = reg("warhead_generic_medium");
+	public static final DeferredItem<ItemBase> WARHEAD_INCENDIARY_MEDIUM = reg("warhead_incendiary_medium");
+	public static final DeferredItem<ItemBase> WARHEAD_CLUSTER_MEDIUM = reg("warhead_cluster_medium");
+	public static final DeferredItem<ItemBase> WARHEAD_BUSTER_MEDIUM = reg("warhead_buster_medium");
+	public static final DeferredItem<ItemBase> WARHEAD_GENERIC_LARGE = reg("warhead_generic_large");
+	public static final DeferredItem<ItemBase> WARHEAD_INCENDIARY_LARGE = reg("warhead_incendiary_large");
+	public static final DeferredItem<ItemBase> WARHEAD_CLUSTER_LARGE = reg("warhead_cluster_large");
+	public static final DeferredItem<ItemBase> WARHEAD_BUSTER_LARGE = reg("warhead_buster_large");
+	public static final DeferredItem<ItemBase> WARHEAD_N2 = reg("warhead_n2");
+	public static final DeferredItem<ItemBase> WARHEAD_NUCLEAR = reg("warhead_nuclear");
+	public static final DeferredItem<ItemBase> WARHEAD_MIRVLET = reg("warhead_mirvlet");
+	public static final DeferredItem<ItemBase> WARHEAD_MIRV = reg("warhead_mirv");
+	public static final DeferredItem<ItemBase> WARHEAD_VOLCANO = reg("warhead_volcano");
+	public static final DeferredItem<ItemBase> WARHEAD_THERMO_ENDO = reg("warhead_thermo_endo");
+	public static final DeferredItem<ItemBase> WARHEAD_THERMO_EXO = reg("warhead_thermo_exo");
+
+	// Thrusters & Hardware Components
+	public static final DeferredItem<ItemBase> THRUSTER_SMALL = reg("thruster_small");
+	public static final DeferredItem<ItemBase> THRUSTER_MEDIUM = reg("thruster_medium");
+	public static final DeferredItem<ItemBase> THRUSTER_LARGE = reg("thruster_large");
+	public static final DeferredItem<ItemBase> CAP_ALUMINIUM = reg("cap_aluminium");
+	public static final DeferredItem<ItemBase> FINS_FLAT = reg("fins_flat");
+	public static final DeferredItem<ItemBase> FINS_SMALL_STEEL = reg("fins_small_steel");
+	public static final DeferredItem<ItemBase> FINS_BIG_STEEL = reg("fins_big_steel");
+	public static final DeferredItem<ItemBase> FINS_TRI_STEEL = reg("fins_tri_steel");
+	public static final DeferredItem<ItemBase> FINS_QUAD_TITANIUM = reg("fins_quad_titanium");
+	public static final DeferredItem<ItemBase> SPHERE_STEEL = reg("sphere_steel");
+	public static final DeferredItem<ItemBase> PEDESTAL_STEEL = reg("pedestal_steel");
+	public static final DeferredItem<ItemBase> DYSFUNCTIONAL_REACTOR = reg("dysfunctional_reactor");
+	public static final DeferredItem<ItemBase> ROTOR_STEEL = reg("rotor_steel");
+	public static final DeferredItem<ItemBase> GENERATOR_STEEL = reg("generator_steel");
+	public static final DeferredItem<ItemBase> SEG_10 = reg("seg_10");
+	public static final DeferredItem<ItemBase> SEG_15 = reg("seg_15");
+	public static final DeferredItem<ItemBase> SEG_20 = reg("seg_20");
+	public static final DeferredItem<ItemBase> FUEL_TANK_SMALL = reg("fuel_tank_small");
+	public static final DeferredItem<ItemBase> FUEL_TANK_MEDIUM = reg("fuel_tank_medium");
+	public static final DeferredItem<ItemBase> FUEL_TANK_LARGE = reg("fuel_tank_large");
+	public static final DeferredItem<ItemBase> TANK_STEEL = reg("tank_steel");
+
+	// Modular Missile Parts: Thrusters
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_10_KEROSENE = register("mp_thruster_10_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 1.5F, PartSize.SIZE_10).setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_10_SOLID = register("mp_thruster_10_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 1.5F, PartSize.SIZE_10).setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_10_XENON = register("mp_thruster_10_xenon", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.XENON, 1F, 1.5F, PartSize.SIZE_10).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_KEROSENE = register("mp_thruster_15_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 7.5F, PartSize.SIZE_15).setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_KEROSENE_DUAL = register("mp_thruster_15_kerosene_dual", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 6.5F, PartSize.SIZE_15).setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_KEROSENE_TRIPLE = register("mp_thruster_15_kerosene_triple", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 5F, PartSize.SIZE_15).setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_SOLID = register("mp_thruster_15_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 5F, PartSize.SIZE_15).setHealth(20F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_SOLID_HEXDECUPLE = register("mp_thruster_15_solid_hexdecuple", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 7F, PartSize.SIZE_15).setHealth(25F).setRarity(Rarity.UNCOMMON));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_HYDROGEN = register("mp_thruster_15_hydrogen", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.HYDROGEN, 1F, 7.5F, PartSize.SIZE_15).setHealth(20F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_HYDROGEN_DUAL = register("mp_thruster_15_hydrogen_dual", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.HYDROGEN, 1F, 5.0F, PartSize.SIZE_15).setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_BALEFIRE_SHORT = register("mp_thruster_15_balefire_short", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.BALEFIRE, 1F, 5F, PartSize.SIZE_15).setHealth(25F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_BALEFIRE = register("mp_thruster_15_balefire", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.BALEFIRE, 1F, 6.5F, PartSize.SIZE_15).setHealth(25F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_BALEFIRE_LARGE = register("mp_thruster_15_balefire_large", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.BALEFIRE, 1F, 7.0F, PartSize.SIZE_15).setHealth(35F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_15_BALEFIRE_LARGE_RAD = register("mp_thruster_15_balefire_large_rad", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.BALEFIRE, 1F, 7.5F, PartSize.SIZE_15).setAuthor("The Master").setHealth(35F).setRarity(Rarity.UNCOMMON));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_KEROSENE = register("mp_thruster_20_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 100F, PartSize.SIZE_20).setHealth(30F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_KEROSENE_DUAL = register("mp_thruster_20_kerosene_dual", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 100F, PartSize.SIZE_20).setHealth(30F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_KEROSENE_TRIPLE = register("mp_thruster_20_kerosene_triple", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.KEROSENE, 1F, 100F, PartSize.SIZE_20).setHealth(30F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_SOLID = register("mp_thruster_20_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 100F, PartSize.SIZE_20).setHealth(35F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_SOLID_MULTI = register("mp_thruster_20_solid_multi", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 100F, PartSize.SIZE_20).setHealth(35F));
+	public static final DeferredItem<ItemMissile> MP_THRUSTER_20_SOLID_MULTIER = register("mp_thruster_20_solid_multier", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeThruster(FuelType.SOLID, 1F, 100F, PartSize.SIZE_20).setHealth(35F));
+
+	// Modular Missile Parts: Stability / Fins
+	public static final DeferredItem<ItemMissile> MP_STABILITY_10_FLAT = register("mp_stability_10_flat", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.5F, PartSize.SIZE_10).setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_10_CRUISE = register("mp_stability_10_cruise", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.25F, PartSize.SIZE_10).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_10_SPACE = register("mp_stability_10_space", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.35F, PartSize.SIZE_10).setHealth(5F).setRarity(Rarity.COMMON));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_15_FLAT = register("mp_stability_15_flat", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.5F, PartSize.SIZE_15).setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_15_THIN = register("mp_stability_15_thin", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.35F, PartSize.SIZE_15).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_15_SOYUZ = register("mp_stability_15_soyuz", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.25F, PartSize.SIZE_15).setHealth(15F).setRarity(Rarity.COMMON));
+	public static final DeferredItem<ItemMissile> MP_STABILITY_20_FLAT = register("mp_stability_20_flat", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeStability(0.5F, PartSize.SIZE_20));
+
+	// Modular Missile Parts: Fuselages
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_KEROSENE = register("mp_fuselage_10_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.KEROSENE, 2500F, 1000, PartSize.SIZE_10, PartSize.SIZE_10).setHealth(20F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_SOLID = register("mp_fuselage_10_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.SOLID, 2500F, 1000, PartSize.SIZE_10, PartSize.SIZE_10).setHealth(25F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_XENON = register("mp_fuselage_10_xenon", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.XENON, 5000F, 1000, PartSize.SIZE_10, PartSize.SIZE_10).setHealth(20F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_LONG_KEROSENE = register("mp_fuselage_10_long_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.KEROSENE, 5000F, 1000, PartSize.SIZE_10, PartSize.SIZE_10).setHealth(30F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_LONG_SOLID = register("mp_fuselage_10_long_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.SOLID, 5000F, 1000, PartSize.SIZE_10, PartSize.SIZE_10).setHealth(35F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_15_KEROSENE = register("mp_fuselage_10_15_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.KEROSENE, 10000F, 1000, PartSize.SIZE_10, PartSize.SIZE_15).setHealth(40F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_15_SOLID = register("mp_fuselage_10_15_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.SOLID, 10000F, 1000, PartSize.SIZE_10, PartSize.SIZE_15).setHealth(40F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_15_HYDROGEN = register("mp_fuselage_10_15_hydrogen", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.HYDROGEN, 10000F, 1000, PartSize.SIZE_10, PartSize.SIZE_15).setHealth(40F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_10_15_BALEFIRE = register("mp_fuselage_10_15_balefire", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.BALEFIRE, 10000F, 1000, PartSize.SIZE_10, PartSize.SIZE_15).setHealth(40F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_KEROSENE = register("mp_fuselage_15_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.KEROSENE, 15000F, 1000, PartSize.SIZE_15, PartSize.SIZE_15).setHealth(50F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_SOLID = register("mp_fuselage_15_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.SOLID, 15000F, 1000, PartSize.SIZE_15, PartSize.SIZE_15).setHealth(60F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_HYDROGEN = register("mp_fuselage_15_hydrogen", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.HYDROGEN, 15000F, 1000, PartSize.SIZE_15, PartSize.SIZE_15).setHealth(50F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_BALEFIRE = register("mp_fuselage_15_balefire", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.BALEFIRE, 15000F, 1000, PartSize.SIZE_15, PartSize.SIZE_15).setHealth(75F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_20_KEROSENE = register("mp_fuselage_15_20_kerosene", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.KEROSENE, 20000F, 1000, PartSize.SIZE_15, PartSize.SIZE_20).setHealth(70F));
+	public static final DeferredItem<ItemMissile> MP_FUSELAGE_15_20_SOLID = register("mp_fuselage_15_20_solid", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeFuselage(FuelType.SOLID, 20000F, 1000, PartSize.SIZE_15, PartSize.SIZE_20).setHealth(70F));
+
+	// Modular Missile Parts: Warheads
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_HE = register("mp_warhead_10_he", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.HE, 15F, 1.5F, PartSize.SIZE_10).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_INCENDIARY = register("mp_warhead_10_incendiary", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.INC, 15F, 1.5F, PartSize.SIZE_10).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_BUSTER = register("mp_warhead_10_buster", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.BUSTER, 15F, 1.5F, PartSize.SIZE_10).setHealth(5F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_NUCLEAR = register("mp_warhead_10_nuclear", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.NUCLEAR, 35F, 1.5F, PartSize.SIZE_10).setTitle("Tater Tot").setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_NUCLEAR_LARGE = register("mp_warhead_10_nuclear_large", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.NUCLEAR, 75F, 2.5F, PartSize.SIZE_10).setTitle("Chernobyl Boris").setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_TAINT = register("mp_warhead_10_taint", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.TAINT, 15F, 1.5F, PartSize.SIZE_10).setHealth(20F).setRarity(Rarity.UNCOMMON));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_10_CLOUD = register("mp_warhead_10_cloud", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.CLOUD, 15F, 1.5F, PartSize.SIZE_10).setHealth(20F).setRarity(Rarity.RARE));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_HE = register("mp_warhead_15_he", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.HE, 50F, 2.5F, PartSize.SIZE_15).setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_INCENDIARY = register("mp_warhead_15_incendiary", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.INC, 35F, 2.5F, PartSize.SIZE_15).setHealth(10F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_NUCLEAR = register("mp_warhead_15_nuclear", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.NUCLEAR, 125F, 5F, PartSize.SIZE_15).setTitle("Auntie Bertha").setHealth(15F));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_THERMO = register("mp_warhead_15_thermo", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.TX, 250F, 6.5F, PartSize.SIZE_15).setHealth(25F).setRarity(Rarity.RARE));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_MIRV = register("mp_warhead_15_mirv", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.MIRV, 500F, 7.0F, PartSize.SIZE_15).setHealth(20F).setRarity(Rarity.LEGENDARY));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_BOXCAR = register("mp_warhead_15_boxcar", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.TX, 500F, 7.5F, PartSize.SIZE_15).setHealth(35F).setRarity(Rarity.LEGENDARY));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_N2 = register("mp_warhead_15_n2", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.N2, 100F, 5F, PartSize.SIZE_15).setHealth(20F).setRarity(Rarity.RARE));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_BALEFIRE = register("mp_warhead_15_balefire", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.BALEFIRE, 100F, 7.5F, PartSize.SIZE_15).setHealth(15F).setRarity(Rarity.LEGENDARY));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_VOLCANO = register("mp_warhead_15_volcano", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.VOLCANO, 10F, 6.5F, PartSize.SIZE_15).setHealth(25F).setRarity(Rarity.LEGENDARY));
+	public static final DeferredItem<ItemMissile> MP_WARHEAD_15_TURBINE = register("mp_warhead_15_turbine", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeWarhead(WarheadType.TURBINE, 200F, 5F, PartSize.SIZE_15).setHealth(250F).setRarity(Rarity.SEWS_CLOTHES_AND_SUCKS_HORSE_COCK));
+
+	// Modular Missile Parts: Chips
+	public static final DeferredItem<ItemMissile> MP_CHIP_1 = register("mp_c_1", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeChip(0.1F));
+	public static final DeferredItem<ItemMissile> MP_CHIP_2 = register("mp_c_2", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeChip(0.05F));
+	public static final DeferredItem<ItemMissile> MP_CHIP_3 = register("mp_c_3", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeChip(0.01F));
+	public static final DeferredItem<ItemMissile> MP_CHIP_4 = register("mp_c_4", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeChip(0.005F));
+	public static final DeferredItem<ItemMissile> MP_CHIP_5 = register("mp_c_5", () -> (ItemMissile) new ItemMissile(new Item.Properties()).makeChip(0.0F));
+
+	// Missile Skins
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_CAMO = reg("missile_skin_camo");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_DESERT = reg("missile_skin_desert");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_FLAMES = reg("missile_skin_flames");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_MANLY_PINK = reg("missile_skin_manly_pink");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_ORANGE_INSULATION = reg("missile_skin_orange_insulation");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_SLEEK = reg("missile_skin_sleek");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_SOVIET_GLORY = reg("missile_skin_soviet_glory");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_SOVIET_STANK = reg("missile_skin_soviet_stank");
+	public static final DeferredItem<ItemBase> MISSILE_SKIN_METAL = reg("missile_skin_metal");
+
+	// Nuclear Bomb Components (Special)
+	public static final DeferredItem<ItemBase> FLEIJA_CORE = reg("fleija_core");
+	public static final DeferredItem<ItemBase> FLEIJA_IGNITER = reg("fleija_igniter");
+	public static final DeferredItem<ItemBase> FLEIJA_PROPELLANT = reg("fleija_propellant");
+
+	public static final DeferredItem<ItemBase> SOLINIUM_CORE = reg("solinium_core");
+	public static final DeferredItem<ItemBase> SOLINIUM_IGNITER = reg("solinium_igniter");
+	public static final DeferredItem<ItemBase> SOLINIUM_PROPELLANT = reg("solinium_propellant");
+
+	public static final DeferredItem<ItemBase> N2_CHARGE = reg("n2_charge");
+	public static final DeferredItem<ItemBase> EGG_BALEFIRE = reg("egg_balefire");
+	public static final DeferredItem<ItemBase> BATTERY_SPARK = reg("battery_spark");
+	public static final DeferredItem<ItemBase> BATTERY_TRIXITE = reg("battery_trixite");
+	public static final DeferredItem<ItemBase> INGOT_EUPHEMIUM = reg("ingot_euphemium");
+
+	public static final DeferredItem<ItemBase> INGOT_U235 = reg("ingot_u235");
+	public static final DeferredItem<ItemBase> INGOT_PU239 = reg("ingot_pu239");
+	public static final DeferredItem<ItemBase> INGOT_NEPTUNIUM = reg("ingot_neptunium");
+	public static final DeferredItem<ItemBase> INGOT_SCHRABIDIUM = reg("ingot_schrabidium");
+	public static final DeferredItem<ItemBase> INGOT_TITANIUM = reg("ingot_titanium");
+	public static final DeferredItem<ItemBase> LITHIUM = reg("lithium");
+	public static final DeferredItem<ItemBase> INGOT_SEMTEX = reg("ingot_semtex");
+	public static final DeferredItem<ItemBase> INGOT_C4 = reg("ingot_c4");
+
 	public static final DeferredItem<ItemBase> AMMO_CONTAINER = reg("ammo_container");
 	public static final DeferredItem<ItemBase> BOTTLE_RAD = reg("bottle_rad");
-	public static final DeferredItem<ItemBase> MISSILE_NUCLEAR = reg("missile_nuclear");
 	public static final DeferredItem<ItemBase> PLATE_SATURNITE = reg("plate_saturnite");
+	public static final DeferredItem<ItemBase> PLATE_IRON = reg("plate_iron");
+	public static final DeferredItem<ItemBase> PLATE_GOLD = reg("plate_gold");
+	public static final DeferredItem<ItemBase> PLATE_TITANIUM = reg("plate_titanium");
+	public static final DeferredItem<ItemBase> PLATE_STEEL = reg("plate_steel");
+	public static final DeferredItem<ItemBase> PLATE_LEAD = reg("plate_lead");
+	public static final DeferredItem<ItemBase> PLATE_COPPER = reg("plate_copper");
+	public static final DeferredItem<ItemBase> PLATE_ALUMINIUM = reg("plate_aluminium");
+	public static final DeferredItem<ItemBase> PLATE_ADVANCED_ALLOY = reg("plate_advanced_alloy");
+	public static final DeferredItem<ItemBase> PLATE_SCHRABIDIUM = reg("plate_schrabidium");
+	public static final DeferredItem<ItemBase> PLATE_COMBINE_STEEL = reg("plate_combine_steel");
+	public static final DeferredItem<ItemBase> PLATE_TUNGSTEN = reg("plate_tungsten");
 	public static final DeferredItem<ItemBase> ENTANGLEMENT_KIT = reg("entanglement_kit");
 	public static final DeferredItem<ItemBase> MARSHMALLOW = reg("marshmallow");
 	public static final DeferredItem<ItemBase> MARSHMALLOW_ROASTED = reg("marshmallow_roasted");
-	public static final DeferredItem<com.hbm.items.tool.ItemDesignator> DESIGNATOR = register("designator", () -> new com.hbm.items.tool.ItemDesignator(new Item.Properties()));
 
 	// Firearms & Weapons
 	public static final DeferredItem<com.hbm.items.weapon.sedna.ItemGunBaseSedna> GUN_9MM = register("gun_9mm", com.hbm.items.weapon.sedna.factory.GunFactory::create9mmPistol);
@@ -608,6 +831,17 @@ public class ModItems {
 	public static Item bottle_rad;
 	public static Item missile_nuclear;
 	public static Item plate_saturnite;
+	public static Item plate_iron;
+	public static Item plate_gold;
+	public static Item plate_titanium;
+	public static Item plate_steel;
+	public static Item plate_lead;
+	public static Item plate_copper;
+	public static Item plate_aluminium;
+	public static Item plate_advanced_alloy;
+	public static Item plate_schrabidium;
+	public static Item plate_combine_steel;
+	public static Item plate_tungsten;
 	public static Item entanglement_kit;
 	public static Item marshmallow;
 	public static Item marshmallow_roasted;
@@ -652,6 +886,97 @@ public class ModItems {
 	public static Item gas_empty;
 	public static Item gas_full;
 	public static Item filter_coal;
+
+	// Missiles & Launch
+	public static Item designator_range;
+	public static Item designator_manual;
+	public static Item launch_code;
+	public static Item launch_key;
+	public static Item missile_assembly;
+	public static Item rocket_fuel;
+
+	public static Item missile_micro;
+	public static Item missile_schrabidium;
+	public static Item missile_bhole;
+	public static Item missile_taint;
+	public static Item missile_emp;
+	public static Item missile_generic;
+	public static Item missile_decoy;
+	public static Item missile_incendiary;
+	public static Item missile_cluster;
+	public static Item missile_buster;
+	public static Item missile_anti_ballistic;
+	public static Item missile_stealth;
+	public static Item missile_strong;
+	public static Item missile_incendiary_strong;
+	public static Item missile_cluster_strong;
+	public static Item missile_buster_strong;
+	public static Item missile_emp_strong;
+	public static Item missile_burst;
+	public static Item missile_inferno;
+	public static Item missile_rain;
+	public static Item missile_drill;
+	public static Item missile_shuttle;
+	public static Item missile_n2;
+	public static Item missile_nuclear_cluster;
+	public static Item missile_volcano;
+	public static Item missile_doomsday;
+	public static Item missile_doomsday_rusted;
+	public static Item missile_custom;
+
+	public static Item warhead_generic_small;
+	public static Item warhead_incendiary_small;
+	public static Item warhead_cluster_small;
+	public static Item warhead_buster_small;
+	public static Item warhead_generic_medium;
+	public static Item warhead_incendiary_medium;
+	public static Item warhead_cluster_medium;
+	public static Item warhead_buster_medium;
+	public static Item warhead_generic_large;
+	public static Item warhead_incendiary_large;
+	public static Item warhead_cluster_large;
+	public static Item warhead_buster_large;
+	public static Item warhead_n2;
+	public static Item warhead_nuclear;
+	public static Item warhead_mirvlet;
+	public static Item warhead_mirv;
+	public static Item warhead_volcano;
+	public static Item warhead_thermo_endo;
+	public static Item warhead_thermo_exo;
+
+	public static Item thruster_small;
+	public static Item thruster_medium;
+	public static Item thruster_large;
+	public static Item cap_aluminium;
+	public static Item fins_flat;
+	public static Item fins_small_steel;
+	public static Item fins_big_steel;
+	public static Item fins_tri_steel;
+	public static Item fins_quad_titanium;
+	public static Item sphere_steel;
+	public static Item pedestal_steel;
+	public static Item dysfunctional_reactor;
+	public static Item rotor_steel;
+	public static Item generator_steel;
+	public static Item seg_10;
+	public static Item seg_15;
+	public static Item seg_20;
+	public static Item fuel_tank_small;
+	public static Item fuel_tank_medium;
+	public static Item fuel_tank_large;
+	public static Item tank_steel;
+
+	public static Item fleija_core;
+	public static Item fleija_igniter;
+	public static Item fleija_propellant;
+	public static Item solinium_core;
+	public static Item solinium_igniter;
+	public static Item solinium_propellant;
+	public static Item n2_charge;
+	public static Item egg_balefire;
+	public static Item battery_spark;
+	public static Item battery_trixite;
+	public static Item ingot_euphemium;
 
 	public static void register(IEventBus bus) {
 		ITEMS.register(bus);
@@ -927,5 +1252,107 @@ public class ModItems {
 		gas_empty = GAS_EMPTY.get();
 		gas_full = GAS_FULL.get();
 		filter_coal = FILTER_COAL.get();
+
+		designator_range = DESIGNATOR_RANGE.get();
+		designator_manual = DESIGNATOR_MANUAL.get();
+		launch_code = LAUNCH_CODE.get();
+		launch_key = LAUNCH_KEY.get();
+		missile_assembly = MISSILE_ASSEMBLY.get();
+		rocket_fuel = ROCKET_FUEL.get();
+
+		missile_micro = MISSILE_MICRO.get();
+		missile_schrabidium = MISSILE_SCHRABIDIUM.get();
+		missile_bhole = MISSILE_BHOLE.get();
+		missile_taint = MISSILE_TAINT.get();
+		missile_emp = MISSILE_EMP.get();
+		missile_generic = MISSILE_GENERIC.get();
+		missile_decoy = MISSILE_DECOY.get();
+		missile_incendiary = MISSILE_INCENDIARY.get();
+		missile_cluster = MISSILE_CLUSTER.get();
+		missile_buster = MISSILE_BUSTER.get();
+		missile_anti_ballistic = MISSILE_ANTI_BALLISTIC.get();
+		missile_stealth = MISSILE_STEALTH.get();
+		missile_strong = MISSILE_STRONG.get();
+		missile_incendiary_strong = MISSILE_INCENDIARY_STRONG.get();
+		missile_cluster_strong = MISSILE_CLUSTER_STRONG.get();
+		missile_buster_strong = MISSILE_BUSTER_STRONG.get();
+		missile_emp_strong = MISSILE_EMP_STRONG.get();
+		missile_burst = MISSILE_BURST.get();
+		missile_inferno = MISSILE_INFERNO.get();
+		missile_rain = MISSILE_RAIN.get();
+		missile_drill = MISSILE_DRILL.get();
+		missile_shuttle = MISSILE_SHUTTLE.get();
+		missile_n2 = MISSILE_N2.get();
+		missile_nuclear_cluster = MISSILE_NUCLEAR_CLUSTER.get();
+		missile_volcano = MISSILE_VOLCANO.get();
+		missile_doomsday = MISSILE_DOOMSDAY.get();
+		missile_doomsday_rusted = MISSILE_DOOMSDAY_RUSTED.get();
+		missile_custom = MISSILE_CUSTOM.get();
+
+		warhead_generic_small = WARHEAD_GENERIC_SMALL.get();
+		warhead_incendiary_small = WARHEAD_INCENDIARY_SMALL.get();
+		warhead_cluster_small = WARHEAD_CLUSTER_SMALL.get();
+		warhead_buster_small = WARHEAD_BUSTER_SMALL.get();
+		warhead_generic_medium = WARHEAD_GENERIC_MEDIUM.get();
+		warhead_incendiary_medium = WARHEAD_INCENDIARY_MEDIUM.get();
+		warhead_cluster_medium = WARHEAD_CLUSTER_MEDIUM.get();
+		warhead_buster_medium = WARHEAD_BUSTER_MEDIUM.get();
+		warhead_generic_large = WARHEAD_GENERIC_LARGE.get();
+		warhead_incendiary_large = WARHEAD_INCENDIARY_LARGE.get();
+		warhead_cluster_large = WARHEAD_CLUSTER_LARGE.get();
+		warhead_buster_large = WARHEAD_BUSTER_LARGE.get();
+		warhead_n2 = WARHEAD_N2.get();
+		warhead_nuclear = WARHEAD_NUCLEAR.get();
+		warhead_mirvlet = WARHEAD_MIRVLET.get();
+		warhead_mirv = WARHEAD_MIRV.get();
+		warhead_volcano = WARHEAD_VOLCANO.get();
+		warhead_thermo_endo = WARHEAD_THERMO_ENDO.get();
+		warhead_thermo_exo = WARHEAD_THERMO_EXO.get();
+
+		thruster_small = THRUSTER_SMALL.get();
+		thruster_medium = THRUSTER_MEDIUM.get();
+		thruster_large = THRUSTER_LARGE.get();
+		cap_aluminium = CAP_ALUMINIUM.get();
+		fins_flat = FINS_FLAT.get();
+		fins_small_steel = FINS_SMALL_STEEL.get();
+		fins_big_steel = FINS_BIG_STEEL.get();
+		fins_tri_steel = FINS_TRI_STEEL.get();
+		fins_quad_titanium = FINS_QUAD_TITANIUM.get();
+		sphere_steel = SPHERE_STEEL.get();
+		pedestal_steel = PEDESTAL_STEEL.get();
+		dysfunctional_reactor = DYSFUNCTIONAL_REACTOR.get();
+		rotor_steel = ROTOR_STEEL.get();
+		generator_steel = GENERATOR_STEEL.get();
+		seg_10 = SEG_10.get();
+		seg_15 = SEG_15.get();
+		seg_20 = SEG_20.get();
+		fuel_tank_small = FUEL_TANK_SMALL.get();
+		fuel_tank_medium = FUEL_TANK_MEDIUM.get();
+		fuel_tank_large = FUEL_TANK_LARGE.get();
+		tank_steel = TANK_STEEL.get();
+
+		fleija_core = FLEIJA_CORE.get();
+		fleija_igniter = FLEIJA_IGNITER.get();
+		fleija_propellant = FLEIJA_PROPELLANT.get();
+		solinium_core = SOLINIUM_CORE.get();
+		solinium_igniter = SOLINIUM_IGNITER.get();
+		solinium_propellant = SOLINIUM_PROPELLANT.get();
+		n2_charge = N2_CHARGE.get();
+		egg_balefire = EGG_BALEFIRE.get();
+		battery_spark = BATTERY_SPARK.get();
+		battery_trixite = BATTERY_TRIXITE.get();
+		ingot_euphemium = INGOT_EUPHEMIUM.get();
+
+		plate_iron = PLATE_IRON.get();
+		plate_gold = PLATE_GOLD.get();
+		plate_titanium = PLATE_TITANIUM.get();
+		plate_steel = PLATE_STEEL.get();
+		plate_lead = PLATE_LEAD.get();
+		plate_copper = PLATE_COPPER.get();
+		plate_aluminium = PLATE_ALUMINIUM.get();
+		plate_advanced_alloy = PLATE_ADVANCED_ALLOY.get();
+		plate_schrabidium = PLATE_SCHRABIDIUM.get();
+		plate_combine_steel = PLATE_COMBINE_STEEL.get();
+		plate_tungsten = PLATE_TUNGSTEN.get();
 	}
 }
