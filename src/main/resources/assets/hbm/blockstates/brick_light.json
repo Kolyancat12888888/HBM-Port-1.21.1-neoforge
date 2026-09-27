@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:brick_light" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/brick_light"
+    }
+  }
 }

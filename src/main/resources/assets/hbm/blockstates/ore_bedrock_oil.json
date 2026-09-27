@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_bedrock_oil" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_bedrock_oil"
+    }
+  }
 }

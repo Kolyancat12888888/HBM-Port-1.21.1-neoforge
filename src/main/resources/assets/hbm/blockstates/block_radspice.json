@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_radspice" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_radspice"
+    }
+  }
 }

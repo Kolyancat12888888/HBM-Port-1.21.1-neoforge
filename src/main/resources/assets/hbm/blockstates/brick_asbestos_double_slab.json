@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:brick_asbestos" },
-        "half=top,variant=default": { "model": "hbm:brick_asbestos" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/brick_asbestos"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/brick_asbestos"
     }
+  }
 }

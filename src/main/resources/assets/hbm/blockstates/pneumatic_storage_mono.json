@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:pneumatic_storage_mono" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/pneumatic_storage_mono"
+    }
+  }
 }

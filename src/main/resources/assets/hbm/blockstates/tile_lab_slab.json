@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:half_slab_tile_lab" },
-        "half=top,variant=default": { "model": "hbm:upper_slab_tile_lab" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/half_slab_tile_lab"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/upper_slab_tile_lab"
     }
+  }
 }

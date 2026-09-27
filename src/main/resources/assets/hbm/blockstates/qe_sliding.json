@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:qe_sliding" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/qe_sliding"
+    }
+  }
 }

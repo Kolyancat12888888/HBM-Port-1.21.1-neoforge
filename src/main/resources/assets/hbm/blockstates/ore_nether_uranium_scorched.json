@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_nether_uranium_scorched" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_nether_uranium_scorched"
+    }
+  }
 }

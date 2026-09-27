@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_condenser" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_condenser"
+    }
+  }
 }

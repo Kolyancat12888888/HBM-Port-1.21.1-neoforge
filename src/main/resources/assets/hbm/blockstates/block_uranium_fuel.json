@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_uranium_fuel" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_uranium_fuel"
+    }
+  }
 }

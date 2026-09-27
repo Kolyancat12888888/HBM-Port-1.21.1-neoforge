@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_coltan" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_coltan"
+    }
+  }
 }

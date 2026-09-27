@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:depth_nether_brick" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/depth_nether_brick"
+    }
+  }
 }

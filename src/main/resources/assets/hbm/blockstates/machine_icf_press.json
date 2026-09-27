@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "hbm:machine_icf_press"
+    "": {
+      "model": "hbm:block/machine_icf_press"
     }
   }
 }

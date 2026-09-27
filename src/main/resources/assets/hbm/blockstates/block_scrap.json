@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_scrap" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_scrap"
+    }
+  }
 }

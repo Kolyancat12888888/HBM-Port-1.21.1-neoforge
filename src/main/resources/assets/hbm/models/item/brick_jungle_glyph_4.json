@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "hbm:items/brick_jungle_glyph_4"
+  }
+}

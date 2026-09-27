@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:gravel_diamond" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/gravel_diamond"
+    }
+  }
 }

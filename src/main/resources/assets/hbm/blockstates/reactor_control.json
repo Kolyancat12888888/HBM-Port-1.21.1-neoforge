@@ -1,6 +1,10 @@
 {
-	"variants": {
-		"activated=true": { "model": "hbm:reactor_control" },
-     	   	"activated=false": { "model": "hbm:reactor_control" }
-	}
+  "variants": {
+    "activated=true": {
+      "model": "hbm:block/reactor_control"
+    },
+    "activated=false": {
+      "model": "hbm:block/reactor_control"
+    }
+  }
 }

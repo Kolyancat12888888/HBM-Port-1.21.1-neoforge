@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:glass_polarized" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/glass_polarized"
+    }
+  }
 }

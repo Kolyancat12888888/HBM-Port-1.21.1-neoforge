@@ -1,7 +1,7 @@
 {
-	"variants": {
-      "normal": {
-        "model": "hbm:fusion_heater"
-      }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/fusion_heater"
+    }
+  }
 }

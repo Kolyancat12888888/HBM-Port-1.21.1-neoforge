@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:reinforced_sand" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/reinforced_sand"
+    }
+  }
 }

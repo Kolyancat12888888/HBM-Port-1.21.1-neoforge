@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:small_hatch" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/small_hatch"
+    }
+  }
 }

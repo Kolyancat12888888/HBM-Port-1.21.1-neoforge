@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:gas_radon_tomb" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/gas_radon_tomb"
+    }
+  }
 }

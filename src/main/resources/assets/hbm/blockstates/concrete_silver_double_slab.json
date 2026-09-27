@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:concrete_silver" },
-        "half=top,variant=default": { "model": "hbm:concrete_silver" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/concrete_silver"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/concrete_silver"
     }
+  }
 }

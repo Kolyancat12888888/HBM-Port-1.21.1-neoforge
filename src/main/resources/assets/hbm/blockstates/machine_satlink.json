@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "normal": {
-            "model": "hbm:machine_satlink"
-        }
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_satlink"
     }
+  }
 }

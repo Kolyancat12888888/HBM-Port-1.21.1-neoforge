@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:reinforced_laminate" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/reinforced_laminate"
+    }
+  }
 }

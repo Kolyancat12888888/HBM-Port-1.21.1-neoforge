@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:tektite" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/tektite"
+    }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:emp_bomb" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/emp_bomb"
+    }
+  }
 }

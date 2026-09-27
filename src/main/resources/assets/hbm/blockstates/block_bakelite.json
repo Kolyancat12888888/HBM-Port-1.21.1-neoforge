@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_bakelite" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_bakelite"
+    }
+  }
 }

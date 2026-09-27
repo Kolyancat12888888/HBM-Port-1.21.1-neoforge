@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:meteor_brick_chiseled" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/meteor_brick_chiseled"
+    }
+  }
 }

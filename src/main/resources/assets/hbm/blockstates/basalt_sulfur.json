@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:basalt_sulfur" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/basalt_sulfur"
+    }
+  }
 }

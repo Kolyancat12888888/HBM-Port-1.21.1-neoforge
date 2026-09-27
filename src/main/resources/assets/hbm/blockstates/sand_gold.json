@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:sand_gold" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/sand_gold"
+    }
+  }
 }

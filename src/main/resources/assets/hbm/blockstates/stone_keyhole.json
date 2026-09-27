@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "hbm:stone_keyhole" }
+    "": {
+      "model": "hbm:block/stone_keyhole"
+    }
   }
 }

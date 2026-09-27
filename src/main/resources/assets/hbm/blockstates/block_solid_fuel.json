@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_solid_fuel" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_solid_fuel"
+    }
+  }
 }

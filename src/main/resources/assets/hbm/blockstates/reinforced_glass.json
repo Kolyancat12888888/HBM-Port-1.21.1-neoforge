@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:reinforced_glass" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/reinforced_glass"
+    }
+  }
 }

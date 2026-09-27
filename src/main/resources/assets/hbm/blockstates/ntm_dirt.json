@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ntm_dirt" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ntm_dirt"
+    }
+  }
 }

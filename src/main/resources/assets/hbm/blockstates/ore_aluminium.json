@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_aluminium" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_aluminium"
+    }
+  }
 }

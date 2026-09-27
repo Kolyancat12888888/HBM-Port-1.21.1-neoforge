@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "hbm:sliding_blast_door" }
+    "": {
+      "model": "hbm:block/sliding_blast_door"
+    }
   }
 }

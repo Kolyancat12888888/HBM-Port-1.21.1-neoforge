@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:plant_tall" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/plant_tall"
+    }
+  }
 }

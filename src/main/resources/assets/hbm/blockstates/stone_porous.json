@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:stone_porous" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/stone_porous"
+    }
+  }
 }

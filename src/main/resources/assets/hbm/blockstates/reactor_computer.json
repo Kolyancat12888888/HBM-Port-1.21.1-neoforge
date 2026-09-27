@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:reactor_computer" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/reactor_computer"
+    }
+  }
 }

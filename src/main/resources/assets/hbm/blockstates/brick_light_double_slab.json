@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:brick_light" },
-        "half=top,variant=default": { "model": "hbm:brick_light" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/brick_light"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/brick_light"
     }
+  }
 }

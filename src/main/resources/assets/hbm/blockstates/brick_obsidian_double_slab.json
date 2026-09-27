@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:brick_obsidian" },
-        "half=top,variant=default": { "model": "hbm:brick_obsidian" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/brick_obsidian"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/brick_obsidian"
     }
+  }
 }

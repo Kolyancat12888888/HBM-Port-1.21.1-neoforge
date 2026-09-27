@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_rubber" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_rubber"
+    }
+  }
 }

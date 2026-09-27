@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_storage_drum" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_storage_drum"
+    }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_nether_uranium" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_nether_uranium"
+    }
+  }
 }

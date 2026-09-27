@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:deco_asbestos" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/deco_asbestos"
+    }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:flame_war" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/flame_war"
+    }
+  }
 }

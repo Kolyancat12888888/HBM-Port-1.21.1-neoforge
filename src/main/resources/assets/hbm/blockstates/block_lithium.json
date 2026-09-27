@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_lithium" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_lithium"
+    }
+  }
 }

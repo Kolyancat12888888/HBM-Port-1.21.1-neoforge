@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_depth_cinnabar" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_depth_cinnabar"
+    }
+  }
 }

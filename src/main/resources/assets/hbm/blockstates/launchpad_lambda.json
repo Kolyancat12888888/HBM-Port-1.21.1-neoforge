@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "normal": {
-            "model": "hbm:launchpad_lambda"
-        }
+  "variants": {
+    "": {
+      "model": "hbm:block/launchpad_lambda"
     }
+  }
 }

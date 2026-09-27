@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "hbm:brick_concrete_cracked" },
-        "half=top,variant=default": { "model": "hbm:brick_concrete_cracked" }
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "hbm:block/brick_concrete_cracked"
+    },
+    "half=top,variant=default": {
+      "model": "hbm:block/brick_concrete_cracked"
     }
+  }
 }

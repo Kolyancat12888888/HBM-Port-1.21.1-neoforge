@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:cluster_iron" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/cluster_iron"
+    }
+  }
 }

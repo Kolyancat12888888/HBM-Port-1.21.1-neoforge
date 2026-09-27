@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:hazmat" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/hazmat"
+    }
+  }
 }

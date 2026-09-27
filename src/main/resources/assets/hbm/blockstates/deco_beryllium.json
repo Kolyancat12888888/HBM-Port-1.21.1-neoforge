@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:deco_beryllium" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/deco_beryllium"
+    }
+  }
 }

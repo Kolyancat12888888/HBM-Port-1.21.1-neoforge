@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_pu_mix" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_pu_mix"
+    }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:det_miner" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/det_miner"
+    }
+  }
 }

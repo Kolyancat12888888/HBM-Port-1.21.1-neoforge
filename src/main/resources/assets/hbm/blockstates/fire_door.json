@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:fire_door" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/fire_door"
+    }
+  }
 }

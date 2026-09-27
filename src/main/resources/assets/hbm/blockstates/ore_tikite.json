@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_tikite" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_tikite"
+    }
+  }
 }

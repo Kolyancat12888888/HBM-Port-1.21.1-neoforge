@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:brick_obsidian" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/brick_obsidian"
+    }
+  }
 }

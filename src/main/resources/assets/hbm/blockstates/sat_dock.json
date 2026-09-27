@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:sat_dock" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/sat_dock"
+    }
+  }
 }

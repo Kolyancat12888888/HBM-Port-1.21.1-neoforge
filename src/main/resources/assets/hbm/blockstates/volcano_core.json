@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:volcano_core" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/volcano_core"
+    }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:oil_spill" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/oil_spill"
+    }
+  }
 }

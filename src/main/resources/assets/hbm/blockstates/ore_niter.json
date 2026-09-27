@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_niter" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_niter"
+    }
+  }
 }

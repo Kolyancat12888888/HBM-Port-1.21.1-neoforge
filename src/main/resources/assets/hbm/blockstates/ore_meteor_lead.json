@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_meteor_lead" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_meteor_lead"
+    }
+  }
 }

@@ -1,28 +1,28 @@
 {
   "variants": {
     "facing=down": {
-      "model": "hbm:capacitor_tantalium",
+      "model": "hbm:block/capacitor_tantalium",
       "x": 180
     },
     "facing=up": {
-      "model": "hbm:capacitor_tantalium"
+      "model": "hbm:block/capacitor_tantalium"
     },
     "facing=north": {
-      "model": "hbm:capacitor_tantalium",
-	  "x": 90
+      "model": "hbm:block/capacitor_tantalium",
+      "x": 90
     },
     "facing=south": {
-      "model": "hbm:capacitor_tantalium",
+      "model": "hbm:block/capacitor_tantalium",
       "x": 270
     },
     "facing=west": {
-      "model": "hbm:capacitor_tantalium",
-	  "x": 90,
+      "model": "hbm:block/capacitor_tantalium",
+      "x": 90,
       "y": 270
     },
     "facing=east": {
-      "model": "hbm:capacitor_tantalium",
-	  "x": 90,
+      "model": "hbm:block/capacitor_tantalium",
+      "x": 90,
       "y": 90
     }
   }

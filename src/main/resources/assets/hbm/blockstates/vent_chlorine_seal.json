@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:vent_chlorine_seal" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/vent_chlorine_seal"
+    }
+  }
 }

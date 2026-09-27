@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:glass_quartz" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/glass_quartz"
+    }
+  }
 }

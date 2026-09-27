@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "hbm:plant_dead_big_flower" }
+  "variants": {
+    "": {
+      "model": "hbm:block/plant_dead_big_flower"
     }
+  }
 }

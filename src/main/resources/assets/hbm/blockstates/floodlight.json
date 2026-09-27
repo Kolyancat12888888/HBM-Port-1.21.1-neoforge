@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "hbm:floodlight"
+    "": {
+      "model": "hbm:block/floodlight"
     }
   }
 }

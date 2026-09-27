@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:red_wire_sealed" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/red_wire_sealed"
+    }
+  }
 }

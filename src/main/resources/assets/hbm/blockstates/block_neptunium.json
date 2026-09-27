@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_neptunium" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_neptunium"
+    }
+  }
 }

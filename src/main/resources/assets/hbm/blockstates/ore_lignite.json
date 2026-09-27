@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_lignite" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_lignite"
+    }
+  }
 }

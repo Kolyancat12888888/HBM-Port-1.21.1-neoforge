@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_graphite" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_graphite"
+    }
+  }
 }

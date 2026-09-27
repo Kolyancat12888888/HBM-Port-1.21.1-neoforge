@@ -6,9 +6,15 @@
   "variants": {
     "facing": {
       "north": {},
-      "south": { "y": 180 },
-      "west":  { "y": 270 },
-      "east":  { "y": 90 }
+      "south": {
+        "y": 180
+      },
+      "west": {
+        "y": 270
+      },
+      "east": {
+        "y": 90
+      }
     },
     "curve": {
       "straight": {
@@ -21,8 +27,10 @@
         "model": "hbm:conveyor_double_curve_right.obj"
       }
     },
-    "inventory": [{
-      "model": "hbm:conveyor_double.obj"
-    }]
+    "inventory": [
+      {
+        "model": "hbm:block/conveyor_double.obj"
+      }
+    ]
   }
 }

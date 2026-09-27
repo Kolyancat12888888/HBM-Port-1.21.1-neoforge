@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:pneumatic_storage_exporter" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/pneumatic_storage_exporter"
+    }
+  }
 }

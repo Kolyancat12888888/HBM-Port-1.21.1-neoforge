@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:digamma_matter" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/digamma_matter"
+    }
+  }
 }

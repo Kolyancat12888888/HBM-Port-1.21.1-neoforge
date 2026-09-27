@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:railgun_plasma" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/railgun_plasma"
+    }
+  }
 }

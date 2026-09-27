@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:therm_endo" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/therm_endo"
+    }
+  }
 }

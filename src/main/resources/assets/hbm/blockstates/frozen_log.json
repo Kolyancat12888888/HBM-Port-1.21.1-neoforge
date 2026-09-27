@@ -1,7 +1,16 @@
 {
-	"variants": {
-		"axis=y": { "model": "hbm:frozen_log" },
-        "axis=z": { "model": "hbm:frozen_log", "x": 90 },
-        "axis=x": { "model": "hbm:frozen_log", "x": 90, "y": 90 }
-	}
+  "variants": {
+    "axis=y": {
+      "model": "hbm:block/frozen_log"
+    },
+    "axis=z": {
+      "model": "hbm:block/frozen_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "hbm:block/frozen_log",
+      "x": 90,
+      "y": 90
+    }
+  }
 }

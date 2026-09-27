@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_armor_table" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_armor_table"
+    }
+  }
 }

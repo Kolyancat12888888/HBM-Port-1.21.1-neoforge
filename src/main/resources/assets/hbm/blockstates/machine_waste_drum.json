@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_waste_drum" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_waste_drum"
+    }
+  }
 }

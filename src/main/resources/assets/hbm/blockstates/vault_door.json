@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:vault_door" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/vault_door"
+    }
+  }
 }

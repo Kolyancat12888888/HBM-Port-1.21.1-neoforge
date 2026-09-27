@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "hbm:foundry_mold" }
+  "variants": {
+    "": {
+      "model": "hbm:block/foundry_mold"
     }
+  }
 }

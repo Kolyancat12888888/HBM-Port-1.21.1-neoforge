@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:gneiss_chiseled" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/gneiss_chiseled"
+    }
+  }
 }

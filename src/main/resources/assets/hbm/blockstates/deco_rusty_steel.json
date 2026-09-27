@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:deco_rusty_steel" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/deco_rusty_steel"
+    }
+  }
 }

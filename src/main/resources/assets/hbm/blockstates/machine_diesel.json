@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "hbm:machine_diesel" }
+    "": {
+      "model": "hbm:block/machine_diesel"
+    }
   }
 }

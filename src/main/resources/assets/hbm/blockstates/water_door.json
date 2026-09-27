@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "hbm:water_door" }
+    "": {
+      "model": "hbm:block/water_door"
+    }
   }
 }

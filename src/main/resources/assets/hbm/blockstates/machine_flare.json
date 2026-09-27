@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_flare" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_flare"
+    }
+  }
 }

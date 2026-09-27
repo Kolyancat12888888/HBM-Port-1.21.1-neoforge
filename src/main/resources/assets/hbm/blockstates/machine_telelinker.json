@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_telelinker" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_telelinker"
+    }
+  }
 }

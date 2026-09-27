@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:machine_turbine" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/machine_turbine"
+    }
+  }
 }

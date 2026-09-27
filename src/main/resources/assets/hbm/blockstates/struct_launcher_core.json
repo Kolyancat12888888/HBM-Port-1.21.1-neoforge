@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:struct_launcher_core" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/struct_launcher_core"
+    }
+  }
 }

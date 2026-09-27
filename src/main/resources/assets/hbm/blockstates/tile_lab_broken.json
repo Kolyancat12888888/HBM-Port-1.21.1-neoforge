@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:tile_lab_broken" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/tile_lab_broken"
+    }
+  }
 }

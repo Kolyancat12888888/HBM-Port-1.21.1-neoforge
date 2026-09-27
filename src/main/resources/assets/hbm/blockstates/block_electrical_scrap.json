@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_electrical_scrap" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_electrical_scrap"
+    }
+  }
 }

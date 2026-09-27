@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:reinforced_stone" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/reinforced_stone"
+    }
+  }
 }

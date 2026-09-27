@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:decon" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/decon"
+    }
+  }
 }

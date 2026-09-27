@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:oil_pipe" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/oil_pipe"
+    }
+  }
 }

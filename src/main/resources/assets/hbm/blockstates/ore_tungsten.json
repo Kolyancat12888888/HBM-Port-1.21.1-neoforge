@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_tungsten" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_tungsten"
+    }
+  }
 }

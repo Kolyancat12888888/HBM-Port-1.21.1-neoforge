@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "hbm:orbital_station" }
+  "variants": {
+    "": {
+      "model": "hbm:block/orbital_station"
     }
+  }
 }

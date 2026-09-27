@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:residue" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/residue"
+    }
+  }
 }

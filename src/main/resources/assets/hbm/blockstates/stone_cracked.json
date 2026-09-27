@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:stone_cracked" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/stone_cracked"
+    }
+  }
 }

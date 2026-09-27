@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:basalt_brick" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/basalt_brick"
+    }
+  }
 }

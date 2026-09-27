@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:rbmk_steam_outlet" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/rbmk_steam_outlet"
+    }
+  }
 }

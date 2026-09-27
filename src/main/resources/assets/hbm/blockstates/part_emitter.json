@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "normal": {
-            "model": "hbm:part_emitter"
-        }
+  "variants": {
+    "": {
+      "model": "hbm:block/part_emitter"
     }
+  }
 }

@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:crate_jungle" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/crate_jungle"
+    }
+  }
 }

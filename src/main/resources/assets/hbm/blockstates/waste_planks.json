@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:waste_planks" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/waste_planks"
+    }
+  }
 }

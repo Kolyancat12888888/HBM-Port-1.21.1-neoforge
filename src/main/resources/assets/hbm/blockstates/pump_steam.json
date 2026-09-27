@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:pump_steam" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/pump_steam"
+    }
+  }
 }

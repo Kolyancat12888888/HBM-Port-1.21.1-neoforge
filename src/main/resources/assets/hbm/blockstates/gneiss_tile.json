@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:gneiss_tile" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/gneiss_tile"
+    }
+  }
 }

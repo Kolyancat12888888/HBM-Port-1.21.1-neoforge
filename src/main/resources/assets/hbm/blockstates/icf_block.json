@@ -1,10 +1,10 @@
 {
   "variants": {
     "io=false": {
-      "model": "hbm:icf_block"
+      "model": "hbm:block/icf_block"
     },
     "io=true": {
-      "model": "hbm:icf_block_port"
+      "model": "hbm:block/icf_block_port"
     }
   }
 }

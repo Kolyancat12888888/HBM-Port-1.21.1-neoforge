@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:radsensor" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/radsensor"
+    }
+  }
 }

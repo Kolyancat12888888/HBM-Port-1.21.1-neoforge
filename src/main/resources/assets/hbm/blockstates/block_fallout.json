@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:block_fallout" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/block_fallout"
+    }
+  }
 }

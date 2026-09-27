@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:crate_weapon" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/crate_weapon"
+    }
+  }
 }

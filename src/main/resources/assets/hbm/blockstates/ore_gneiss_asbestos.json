@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:ore_gneiss_asbestos" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/ore_gneiss_asbestos"
+    }
+  }
 }

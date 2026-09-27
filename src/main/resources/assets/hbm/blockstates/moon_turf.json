@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "hbm:moon_turf" }
+  "variants": {
+    "": {
+      "model": "hbm:block/moon_turf"
     }
+  }
 }

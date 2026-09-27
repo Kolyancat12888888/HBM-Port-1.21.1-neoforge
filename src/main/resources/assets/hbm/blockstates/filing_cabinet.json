@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:filing_cabinet" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/filing_cabinet"
+    }
+  }
 }

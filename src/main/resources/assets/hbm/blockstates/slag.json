@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "hbm:slag" }
+    "": {
+      "model": "hbm:block/slag"
+    }
   }
 }

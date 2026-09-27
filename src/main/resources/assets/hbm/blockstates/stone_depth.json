@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"normal": { "model": "hbm:stone_depth" }
-	}
+  "variants": {
+    "": {
+      "model": "hbm:block/stone_depth"
+    }
+  }
 }
