@@ -576,6 +576,16 @@ public class ModItems {
 
 	public static final DeferredItem<ItemBase> GEM_SODALITE = reg("gem_sodalite");
 	public static final DeferredItem<ItemBase> SCRAP = reg("scrap");
+	public static final DeferredItem<ItemBase> LIGNITE = reg("lignite");
+	public static final DeferredItem<ItemBase> POWDER_LIGNITE = reg("powder_lignite");
+	public static final DeferredItem<ItemBase> DUST_WOOD = reg("dust_wood");
+	public static final DeferredItem<ItemBase> BIOMASS = reg("biomass");
+	public static final DeferredItem<ItemBase> SULFUR = reg("sulfur");
+	public static final DeferredItem<ItemBase> NITER = reg("niter");
+	public static final DeferredItem<ItemBase> FLUORITE = reg("fluorite");
+	public static final DeferredItem<ItemBase> INGOT_THORIUM = reg("ingot_thorium");
+	public static final DeferredItem<ItemBase> INGOT_BERYLLIUM = reg("ingot_beryllium");
+	public static final DeferredItem<ItemBase> YELLOWCAKE = reg("yellowcake");
 
 	// AMS Cores
 	public static final DeferredItem<ItemAMSCore> AMS_CORE_SING = register("ams_core_sing", () -> new ItemAMSCore(100_000, 100, 1.0F));
@@ -801,6 +811,16 @@ public class ModItems {
 	public static Item crystal_schrabidium;
 	public static Item gem_sodalite;
 	public static Item scrap;
+	public static Item lignite;
+	public static Item powder_lignite;
+	public static Item dust_wood;
+	public static Item biomass;
+	public static Item sulfur;
+	public static Item niter;
+	public static Item fluorite;
+	public static Item ingot_thorium;
+	public static Item ingot_beryllium;
+	public static Item yellowcake;
 	public static Item powder_yellowcake;
 	public static Item powder_plutonium;
 	public static Item ingot_steel;
@@ -1207,6 +1227,16 @@ public class ModItems {
 		crystal_schrabidium = CRYSTAL_SCHRABIDIUM.get();
 		gem_sodalite = GEM_SODALITE.get();
 		scrap = SCRAP.get();
+		lignite = LIGNITE.get();
+		powder_lignite = POWDER_LIGNITE.get();
+		dust_wood = DUST_WOOD.get();
+		biomass = BIOMASS.get();
+		sulfur = SULFUR.get();
+		niter = NITER.get();
+		fluorite = FLUORITE.get();
+		ingot_thorium = INGOT_THORIUM.get();
+		ingot_beryllium = INGOT_BERYLLIUM.get();
+		yellowcake = YELLOWCAKE.get();
 
 		powder_yellowcake = POWDER_YELLOWCAKE.get();
 		powder_plutonium = POWDER_PLUTONIUM.get();

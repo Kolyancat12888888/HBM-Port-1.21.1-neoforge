@@ -1,15 +1,13 @@
 package com.hbm.tileentity.machine;
 
-import com.hbm.blocks.ModBlocks;
+import com.hbm.inventory.recipes.ShredderRecipes;
 import com.hbm.items.ModItems;
 import com.hbm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class TileEntityMachineShredder extends TileEntityMachineBase {
@@ -51,18 +49,29 @@ public class TileEntityMachineShredder extends TileEntityMachineBase {
 	}
 
 	public boolean canShred(ItemStack in) {
-		return true; // Almost any solid item can be shredded into scrap or dust
+		if (in.isEmpty()) return false;
+		ItemStack out = ShredderRecipes.getOutput(in);
+		if (out == null || out.isEmpty()) {
+			out = new ItemStack(ModItems.SCRAP.get(), 1);
+		}
+		ItemStack existing = inventory.getStackInSlot(1);
+		if (existing.isEmpty()) return true;
+		if (!ItemStack.isSameItemSameComponents(existing, out)) return false;
+		return existing.getCount() + out.getCount() <= existing.getMaxStackSize();
 	}
 
 	public void processShredding(ItemStack in) {
+		ItemStack result = ShredderRecipes.getOutput(in);
+		if (result == null || result.isEmpty()) {
+			result = new ItemStack(ModItems.SCRAP.get(), 1);
+		}
 		in.shrink(1);
 		ItemStack out = inventory.getStackInSlot(1);
-		ItemStack scrap = new ItemStack(ModItems.SCRAP.get(), 1);
 
 		if (out.isEmpty()) {
-			inventory.setStackInSlot(1, scrap);
-		} else if (ItemStack.isSameItemSameComponents(out, scrap) && out.getCount() < out.getMaxStackSize()) {
-			out.grow(1);
+			inventory.setStackInSlot(1, result.copy());
+		} else if (ItemStack.isSameItemSameComponents(out, result) && out.getCount() + result.getCount() <= out.getMaxStackSize()) {
+			out.grow(result.getCount());
 		}
 		this.markChanged();
 	}
