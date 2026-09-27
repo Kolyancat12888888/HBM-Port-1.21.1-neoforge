@@ -94,6 +94,22 @@ public class ModBlocks {
 	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineAssemblyMachine> MACHINE_ASSEMBLY_MACHINE = register("machine_assembly_machine", () -> new com.hbm.blocks.machine.BlockMachineAssemblyMachine(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 10.0F)));
 	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineSiren> MACHINE_SIREN = register("machine_siren", () -> new com.hbm.blocks.machine.BlockMachineSiren(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(3.0F, 10.0F)));
 	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineBattery> MACHINE_BATTERY = register("machine_battery", () -> new com.hbm.blocks.machine.BlockMachineBattery(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 10.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineRTG> MACHINE_RTG = register("machine_rtg", () -> new com.hbm.blocks.machine.BlockMachineRTG(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineTurbine> MACHINE_TURBINE = register("machine_turbine", () -> new com.hbm.blocks.machine.BlockMachineTurbine(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 20.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineIndustrialTurbine> MACHINE_INDUSTRIAL_TURBINE = register("machine_industrial_turbine", () -> new com.hbm.blocks.machine.BlockMachineIndustrialTurbine(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 50.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineIGenerator> MACHINE_GENERATOR = register("machine_generator", () -> new com.hbm.blocks.machine.BlockMachineIGenerator(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 20.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineFluidTank> MACHINE_FLUID_TANK = register("machine_fluid_tank", () -> new com.hbm.blocks.machine.BlockMachineFluidTank(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(4.0F, 20.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineStorageTank> MACHINE_STORAGE_TANK = register("machine_storage_tank", () -> new com.hbm.blocks.machine.BlockMachineStorageTank(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 50.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachineGasFlare> MACHINE_GAS_FLARE = register("machine_gas_flare", () -> new com.hbm.blocks.machine.BlockMachineGasFlare(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(3.0F, 10.0F)));
+	public static final DeferredBlock<com.hbm.blocks.machine.BlockMachinePump> MACHINE_PUMP = register("machine_pump", () -> new com.hbm.blocks.machine.BlockMachinePump(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 20.0F)));
+
+	// Power Grid & Fluid Logistics
+	public static final DeferredBlock<com.hbm.blocks.network.BlockCable> CABLE = register("cable", () -> new com.hbm.blocks.network.BlockCable(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(1.0F, 2.0F)));
+	public static final DeferredBlock<com.hbm.blocks.network.BlockPylon> PYLON = register("pylon", () -> new com.hbm.blocks.network.BlockPylon(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F)));
+	public static final DeferredBlock<com.hbm.blocks.network.BlockPylon> PYLON_MEDIUM = register("pylon_medium", () -> new com.hbm.blocks.network.BlockPylon(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(8.0F, 80.0F)));
+	public static final DeferredBlock<com.hbm.blocks.network.BlockPylon> PYLON_LARGE = register("pylon_large", () -> new com.hbm.blocks.network.BlockPylon(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(12.0F, 120.0F)));
+	public static final DeferredBlock<com.hbm.blocks.network.BlockSubstation> SUBSTATION = register("substation", () -> new com.hbm.blocks.network.BlockSubstation(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
+	public static final DeferredBlock<com.hbm.blocks.network.BlockPipe> PIPE = register("pipe", () -> new com.hbm.blocks.network.BlockPipe(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(1.5F, 5.0F)));
 
 	// Bombs & Silos
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockBombMulti> BOMB_BOY = register("bomb_boy", () -> new com.hbm.blocks.bomb.BlockBombMulti(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F), com.hbm.tileentity.bomb.TileEntityBombMulti.BombType.BOY));
@@ -218,6 +234,22 @@ public class ModBlocks {
 	public static Block reactor_zirnox;
 	public static Block zirnox_destroyed;
 
+	public static Block machine_rtg;
+	public static Block machine_turbine;
+	public static Block machine_industrial_turbine;
+	public static Block machine_generator;
+	public static Block machine_fluid_tank;
+	public static Block machine_storage_tank;
+	public static Block machine_gas_flare;
+	public static Block machine_pump;
+
+	public static Block cable;
+	public static Block pylon;
+	public static Block pylon_medium;
+	public static Block pylon_large;
+	public static Block substation;
+	public static Block pipe;
+
 	public static void register(IEventBus bus) {
 		BLOCKS.register(bus);
 	}
@@ -290,5 +322,21 @@ public class ModBlocks {
 
 		reactor_zirnox = REACTOR_ZIRNOX.get();
 		zirnox_destroyed = ZIRNOX_DESTROYED.get();
+
+		machine_rtg = MACHINE_RTG.get();
+		machine_turbine = MACHINE_TURBINE.get();
+		machine_industrial_turbine = MACHINE_INDUSTRIAL_TURBINE.get();
+		machine_generator = MACHINE_GENERATOR.get();
+		machine_fluid_tank = MACHINE_FLUID_TANK.get();
+		machine_storage_tank = MACHINE_STORAGE_TANK.get();
+		machine_gas_flare = MACHINE_GAS_FLARE.get();
+		machine_pump = MACHINE_PUMP.get();
+
+		cable = CABLE.get();
+		pylon = PYLON.get();
+		pylon_medium = PYLON_MEDIUM.get();
+		pylon_large = PYLON_LARGE.get();
+		substation = SUBSTATION.get();
+		pipe = PIPE.get();
 	}
 }

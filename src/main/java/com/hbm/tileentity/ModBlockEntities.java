@@ -201,6 +201,58 @@ public class ModBlockEntities {
 			BLOCK_ENTITIES.register("compact_launcher", () ->
 					BlockEntityType.Builder.of(TileEntityCompactLauncher::new, ModBlocks.COMPACT_LAUNCHER.get()).build(null));
 
+	// Power Grid & Fluid Logistics
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.network.energy.TileEntityCableBaseNT>> CABLE =
+			BLOCK_ENTITIES.register("cable", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.network.energy.TileEntityCableBaseNT::new, ModBlocks.CABLE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.network.energy.TileEntityPylon>> PYLON =
+			BLOCK_ENTITIES.register("pylon", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.network.energy.TileEntityPylon::new,
+							ModBlocks.PYLON.get(),
+							ModBlocks.PYLON_MEDIUM.get(),
+							ModBlocks.PYLON_LARGE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.network.energy.TileEntitySubstation>> SUBSTATION =
+			BLOCK_ENTITIES.register("substation", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.network.energy.TileEntitySubstation::new, ModBlocks.SUBSTATION.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.network.TileEntityPipeBaseNT>> PIPE =
+			BLOCK_ENTITIES.register("pipe", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.network.TileEntityPipeBaseNT::new, ModBlocks.PIPE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineRTG>> RTG =
+			BLOCK_ENTITIES.register("machine_rtg", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineRTG::new, ModBlocks.MACHINE_RTG.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineTurbine>> TURBINE =
+			BLOCK_ENTITIES.register("machine_turbine", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineTurbine::new, ModBlocks.MACHINE_TURBINE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineIndustrialTurbine>> INDUSTRIAL_TURBINE =
+			BLOCK_ENTITIES.register("machine_industrial_turbine", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineIndustrialTurbine::new, ModBlocks.MACHINE_INDUSTRIAL_TURBINE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineIGenerator>> GENERATOR =
+			BLOCK_ENTITIES.register("machine_generator", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineIGenerator::new, ModBlocks.MACHINE_GENERATOR.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineFluidTank>> FLUID_TANK =
+			BLOCK_ENTITIES.register("machine_fluid_tank", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineFluidTank::new, ModBlocks.MACHINE_FLUID_TANK.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineStorageTank>> STORAGE_TANK =
+			BLOCK_ENTITIES.register("machine_storage_tank", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineStorageTank::new, ModBlocks.MACHINE_STORAGE_TANK.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityMachineGasFlare>> GAS_FLARE =
+			BLOCK_ENTITIES.register("machine_gas_flare", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityMachineGasFlare::new, ModBlocks.MACHINE_GAS_FLARE.get()).build(null));
+
+	public static final Supplier<BlockEntityType<com.hbm.tileentity.machine.TileEntityPump>> PUMP =
+			BLOCK_ENTITIES.register("machine_pump", () ->
+					BlockEntityType.Builder.of(com.hbm.tileentity.machine.TileEntityPump::new, ModBlocks.MACHINE_PUMP.get()).build(null));
+
 	public static void register(IEventBus bus) {
 		BLOCK_ENTITIES.register(bus);
 	}
