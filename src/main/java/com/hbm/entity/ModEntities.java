@@ -40,6 +40,14 @@ public class ModEntities {
 							.updateInterval(1)
 							.build("missile_generic"));
 
+	public static final Supplier<EntityType<com.hbm.entity.logic.EntityNukeExplosionMK5>> EXPLOSION_MK5 =
+			ENTITY_TYPES.register("explosion_mk5", () ->
+					EntityType.Builder.<com.hbm.entity.logic.EntityNukeExplosionMK5>of(com.hbm.entity.logic.EntityNukeExplosionMK5::new, MobCategory.MISC)
+							.sized(0.1F, 0.1F)
+							.clientTrackingRange(1000)
+							.updateInterval(1)
+							.build("explosion_mk5"));
+
 	public static void register(IEventBus bus) {
 		ENTITY_TYPES.register(bus);
 	}

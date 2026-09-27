@@ -100,6 +100,33 @@ public class ModBlocks {
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockBombMulti> BOMB_GADGET = register("bomb_gadget", () -> new com.hbm.blocks.bomb.BlockBombMulti(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(5.0F, 50.0F), com.hbm.tileentity.bomb.TileEntityBombMulti.BombType.GADGET));
 	public static final DeferredBlock<com.hbm.blocks.bomb.BlockLaunchPad> LAUNCH_PAD = register("launch_pad", () -> new com.hbm.blocks.bomb.BlockLaunchPad(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(10.0F, 100.0F)));
 
+	// Fallout, Waste & Post-Explosion Strata
+	public static final DeferredBlock<Block> WASTE_EARTH = regStone("waste_earth", 0.6F, 0.6F);
+	public static final DeferredBlock<Block> WASTE_MYCELIUM = regStone("waste_mycelium", 0.6F, 0.6F);
+	public static final DeferredBlock<Block> WASTE_TRINITITE = regStone("waste_trinitite", 0.8F, 1.0F);
+	public static final DeferredBlock<Block> WASTE_TRINITITE_RED = regStone("waste_trinitite_red", 0.8F, 1.0F);
+	public static final DeferredBlock<Block> WASTE_LOG = register("waste_log", () -> new net.minecraft.world.level.block.RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).strength(2.0F)));
+	public static final DeferredBlock<Block> WASTE_PLANKS = regStone("waste_planks", 2.0F, 3.0F);
+	public static final DeferredBlock<Block> FROZEN_GRASS = regStone("frozen_grass", 0.6F, 0.6F);
+	public static final DeferredBlock<Block> FROZEN_DIRT = regStone("frozen_dirt", 0.6F, 0.6F);
+	public static final DeferredBlock<Block> FROZEN_LOG = register("frozen_log", () -> new net.minecraft.world.level.block.RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).strength(2.0F)));
+	public static final DeferredBlock<Block> FROZEN_PLANKS = regStone("frozen_planks", 2.0F, 3.0F);
+	public static final DeferredBlock<Block> TEKTITE = regStone("tektite", 5.0F, 50.0F);
+	public static final DeferredBlock<Block> SELLAFIELD = regStone("sellafield", 10.0F, 50.0F);
+	public static final DeferredBlock<Block> SELLAFIELD_SLAKED = regStone("sellafield_slaked", 8.0F, 40.0F);
+	public static final DeferredBlock<Block> TAINT = regStone("taint", 2.0F, 10.0F);
+	public static final DeferredBlock<Block> BALEFIRE = regStone("balefire", 0.0F, 0.0F);
+	public static final DeferredBlock<Block> GRAVEL_OBSIDIAN = regStone("gravel_obsidian", 5.0F, 50.0F);
+	public static final DeferredBlock<Block> BLOCK_SCRAP = regStone("block_scrap", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> BLOCK_ELECTRICAL_SCRAP = regStone("block_electrical_scrap", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> BRICK_OBSIDIAN = regStone("brick_obsidian", 15.0F, 120.0F);
+	public static final DeferredBlock<Block> ORE_URANIUM = regStone("ore_uranium", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> ORE_URANIUM_SCORCHED = regStone("ore_uranium_scorched", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> ORE_SCHRABIDIUM = regStone("ore_schrabidium", 5.0F, 20.0F);
+	public static final DeferredBlock<Block> ORE_NETHER_URANIUM = regStone("ore_nether_uranium", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> ORE_NETHER_URANIUM_SCORCHED = regStone("ore_nether_uranium_scorched", 3.0F, 10.0F);
+	public static final DeferredBlock<Block> ORE_NETHER_SCHRABIDIUM = regStone("ore_nether_schrabidium", 5.0F, 20.0F);
+
 	// Direct accessors for compatibility
 	public static Block ore_oil;
 	public static Block ore_coltan;
@@ -107,6 +134,32 @@ public class ModBlocks {
 	public static Block stone_depth;
 	public static Block stone_depth_nether;
 	public static Block stone_gneiss;
+
+	public static Block waste_earth;
+	public static Block waste_mycelium;
+	public static Block waste_trinitite;
+	public static Block waste_trinitite_red;
+	public static Block waste_log;
+	public static Block waste_planks;
+	public static Block frozen_grass;
+	public static Block frozen_dirt;
+	public static Block frozen_log;
+	public static Block frozen_planks;
+	public static Block tektite;
+	public static Block sellafield;
+	public static Block sellafield_slaked;
+	public static Block taint;
+	public static Block balefire;
+	public static Block gravel_obsidian;
+	public static Block block_scrap;
+	public static Block block_electrical_scrap;
+	public static Block brick_obsidian;
+	public static Block ore_uranium;
+	public static Block ore_uranium_scorched;
+	public static Block ore_schrabidium;
+	public static Block ore_nether_uranium;
+	public static Block ore_nether_uranium_scorched;
+	public static Block ore_nether_schrabidium;
 
 	public static Block block_beryllium;
 	public static Block block_red_copper;
@@ -148,6 +201,32 @@ public class ModBlocks {
 		stone_depth = STONE_DEPTH.get();
 		stone_depth_nether = STONE_DEPTH_NETHER.get();
 		stone_gneiss = STONE_GNEISS.get();
+
+		waste_earth = WASTE_EARTH.get();
+		waste_mycelium = WASTE_MYCELIUM.get();
+		waste_trinitite = WASTE_TRINITITE.get();
+		waste_trinitite_red = WASTE_TRINITITE_RED.get();
+		waste_log = WASTE_LOG.get();
+		waste_planks = WASTE_PLANKS.get();
+		frozen_grass = FROZEN_GRASS.get();
+		frozen_dirt = FROZEN_DIRT.get();
+		frozen_log = FROZEN_LOG.get();
+		frozen_planks = FROZEN_PLANKS.get();
+		tektite = TEKTITE.get();
+		sellafield = SELLAFIELD.get();
+		sellafield_slaked = SELLAFIELD_SLAKED.get();
+		taint = TAINT.get();
+		balefire = BALEFIRE.get();
+		gravel_obsidian = GRAVEL_OBSIDIAN.get();
+		block_scrap = BLOCK_SCRAP.get();
+		block_electrical_scrap = BLOCK_ELECTRICAL_SCRAP.get();
+		brick_obsidian = BRICK_OBSIDIAN.get();
+		ore_uranium = ORE_URANIUM.get();
+		ore_uranium_scorched = ORE_URANIUM_SCORCHED.get();
+		ore_schrabidium = ORE_SCHRABIDIUM.get();
+		ore_nether_uranium = ORE_NETHER_URANIUM.get();
+		ore_nether_uranium_scorched = ORE_NETHER_URANIUM_SCORCHED.get();
+		ore_nether_schrabidium = ORE_NETHER_SCHRABIDIUM.get();
 
 		block_beryllium = BLOCK_BERYLLIUM.get();
 		block_red_copper = BLOCK_RED_COPPER.get();
