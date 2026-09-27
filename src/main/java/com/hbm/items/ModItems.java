@@ -1,5 +1,6 @@
 package com.hbm.items;
 
+import com.hbm.items.food.*;
 import com.hbm.items.machine.*;
 import com.hbm.items.machine.ItemMachineUpgrade.UpgradeType;
 import com.hbm.items.special.*;
@@ -49,6 +50,24 @@ public class ModItems {
 	public static final DeferredItem<ItemSurveyScanner> SURVEY_SCANNER = register("survey_scanner", ItemSurveyScanner::new);
 	public static final DeferredItem<ItemOreDensityScanner> ORE_DENSITY_SCANNER = register("ore_density_scanner", ItemOreDensityScanner::new);
 	public static final DeferredItem<ItemDyatlov> DYATLOV = register("dyatlov", ItemDyatlov::new);
+
+	// Medical & Anti-Rad Treatments
+	public static final DeferredItem<ItemRadaway> RADAWAY = register("radaway", () -> new ItemRadaway(ItemRadaway.RadawayType.NORMAL));
+	public static final DeferredItem<ItemRadaway> RADAWAY_STRONG = register("radaway_strong", () -> new ItemRadaway(ItemRadaway.RadawayType.STRONG));
+	public static final DeferredItem<ItemRadaway> RADAWAY_FLUSH = register("radaway_flush", () -> new ItemRadaway(ItemRadaway.RadawayType.FLUSH));
+	public static final DeferredItem<ItemBase> IV_EMPTY = reg("iv_empty");
+	public static final DeferredItem<ItemBase> IV_BLOOD = reg("iv_blood");
+
+	public static final DeferredItem<ItemPill> PILL_IODINE = register("pill_iodine", () -> new ItemPill(ItemPill.PillType.IODINE));
+	public static final DeferredItem<ItemPill> PLAN_C = register("plan_c", () -> new ItemPill(ItemPill.PillType.PLAN_C));
+	public static final DeferredItem<ItemPill> PILL_RED = register("pill_red", () -> new ItemPill(ItemPill.PillType.RED));
+	public static final DeferredItem<ItemPill> RADX = register("radx", () -> new ItemPill(ItemPill.PillType.RADX));
+	public static final DeferredItem<ItemPill> SIOX = register("siox", () -> new ItemPill(ItemPill.PillType.SIOX));
+	public static final DeferredItem<ItemPill> PILL_HERBAL = register("pill_herbal", () -> new ItemPill(ItemPill.PillType.HERBAL));
+	public static final DeferredItem<ItemPill> XANAX = register("xanax", () -> new ItemPill(ItemPill.PillType.XANAX));
+	public static final DeferredItem<ItemPill> FMN = register("fmn", () -> new ItemPill(ItemPill.PillType.FMN));
+	public static final DeferredItem<ItemPill> FIVE_HTP = register("five_htp", () -> new ItemPill(ItemPill.PillType.FIVE_HTP));
+	public static final DeferredItem<ItemPill> CHOCOLATE = register("chocolate", () -> new ItemPill(ItemPill.PillType.CHOCOLATE));
 
 	// Special Drops & Materials
 	public static final DeferredItem<ItemBase> PELLET_ANTIMATTER = reg("pellet_antimatter");
@@ -111,10 +130,6 @@ public class ModItems {
 	public static final DeferredItem<ItemBase> CELL = reg("cell");
 	public static final DeferredItem<ItemBase> ROD_EMPTY = reg("rod_empty");
 	public static final DeferredItem<ItemBase> TEMPLATE_FOLDER = reg("template_folder");
-	public static final DeferredItem<ItemBase> RADAWAY = reg("radaway");
-	public static final DeferredItem<ItemBase> RADAWAY_STRONG = reg("radaway_strong");
-	public static final DeferredItem<ItemBase> RADX = reg("radx");
-	public static final DeferredItem<ItemBase> PILL_IODINE = reg("pill_iodine");
 
 	// Bomb Parts
 	public static final DeferredItem<ItemBase> EARLY_EXPLOSIVE_LENSES = reg("early_explosive_lenses");
@@ -797,10 +812,6 @@ public class ModItems {
 	public static Item cell;
 	public static Item rod_empty;
 	public static Item template_folder;
-	public static Item radaway;
-	public static Item radaway_strong;
-	public static Item radx;
-	public static Item pill_iodine;
 
 	public static Item early_explosive_lenses;
 	public static Item explosive_lenses;
@@ -1065,6 +1076,23 @@ public class ModItems {
 	public static Item battery_trixite;
 	public static Item ingot_euphemium;
 
+	public static Item radaway;
+	public static Item radaway_strong;
+	public static Item radaway_flush;
+	public static Item iv_empty;
+	public static Item iv_blood;
+
+	public static Item pill_iodine;
+	public static Item plan_c;
+	public static Item pill_red;
+	public static Item radx;
+	public static Item siox;
+	public static Item pill_herbal;
+	public static Item xanax;
+	public static Item fmn;
+	public static Item five_htp;
+	public static Item chocolate;
+
 	public static void register(IEventBus bus) {
 		ITEMS.register(bus);
 	}
@@ -1077,6 +1105,23 @@ public class ModItems {
 		survey_scanner = SURVEY_SCANNER.get();
 		ore_density_scanner = ORE_DENSITY_SCANNER.get();
 		dyatlov = DYATLOV.get();
+
+		radaway = RADAWAY.get();
+		radaway_strong = RADAWAY_STRONG.get();
+		radaway_flush = RADAWAY_FLUSH.get();
+		iv_empty = IV_EMPTY.get();
+		iv_blood = IV_BLOOD.get();
+
+		pill_iodine = PILL_IODINE.get();
+		plan_c = PLAN_C.get();
+		pill_red = PILL_RED.get();
+		radx = RADX.get();
+		siox = SIOX.get();
+		pill_herbal = PILL_HERBAL.get();
+		xanax = XANAX.get();
+		fmn = FMN.get();
+		five_htp = FIVE_HTP.get();
+		chocolate = CHOCOLATE.get();
 
 		pellet_antimatter = PELLET_ANTIMATTER.get();
 		singularity = SINGULARITY.get();
@@ -1174,10 +1219,6 @@ public class ModItems {
 		cell = CELL.get();
 		rod_empty = ROD_EMPTY.get();
 		template_folder = TEMPLATE_FOLDER.get();
-		radaway = RADAWAY.get();
-		radaway_strong = RADAWAY_STRONG.get();
-		radx = RADX.get();
-		pill_iodine = PILL_IODINE.get();
 
 		early_explosive_lenses = EARLY_EXPLOSIVE_LENSES.get();
 		explosive_lenses = EXPLOSIVE_LENSES.get();

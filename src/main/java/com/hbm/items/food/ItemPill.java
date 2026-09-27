@@ -2,11 +2,12 @@ package com.hbm.items.food;
 
 import com.hbm.capability.HbmLivingProps;
 import com.hbm.items.ItemBase;
-import net.minecraft.core.Holder;
+import com.hbm.items.ModItems;
+import com.hbm.potion.HbmPotion;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,26 +18,32 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
-import java.util.Random;
 
 public class ItemPill extends ItemBase {
 
-    protected final int hunger;
-    protected final String pillType;
-    private static final Random rand = new Random();
-
-    public ItemPill(Properties properties, int hunger, String pillType) {
-        super(properties);
-        this.hunger = hunger;
-        this.pillType = pillType;
+    public enum PillType {
+        IODINE,
+        PLAN_C,
+        RED,
+        RADX,
+        SIOX,
+        HERBAL,
+        XANAX,
+        FMN,
+        FIVE_HTP,
+        CHOCOLATE
     }
 
-    public ItemPill(int hunger, String pillType) {
-        this(new Properties(), hunger, pillType);
+    private final PillType type;
+
+    public ItemPill(PillType type) {
+        super(new Properties().stacksTo(64));
+        this.type = type;
     }
 
-    public ItemPill(int hunger, String pillType, String texture) {
-        this(new Properties(), hunger, pillType);
+    public ItemPill(PillType type, Properties properties) {
+        super(properties.stacksTo(64));
+        this.type = type;
     }
 
     @Override
@@ -51,24 +58,25 @@ public class ItemPill extends ItemBase {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
         player.startUsingItem(hand);
-        return InteractionResultHolder.consume(player.getItemInHand(hand));
+        return InteractionResultHolder.consume(stack);
     }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
         if (!world.isClientSide() && entity instanceof Player player) {
             applyPillEffects(player);
-        }
-        if (entity instanceof Player player && !player.getAbilities().instabuild) {
-            stack.shrink(1);
+            if (!player.isCreative()) {
+                stack.shrink(1);
+            }
         }
         return stack;
     }
 
-    protected void applyPillEffects(Player player) {
-        switch (pillType) {
-            case "pill_iodine" -> {
+    private void applyPillEffects(Player player) {
+        switch (type) {
+            case IODINE -> {
                 player.removeEffect(MobEffects.BLINDNESS);
                 player.removeEffect(MobEffects.CONFUSION);
                 player.removeEffect(MobEffects.DIG_SLOWDOWN);
@@ -77,55 +85,73 @@ public class ItemPill extends ItemBase {
                 player.removeEffect(MobEffects.POISON);
                 player.removeEffect(MobEffects.WEAKNESS);
                 player.removeEffect(MobEffects.WITHER);
+                if (HbmPotion.radiation != null) player.removeEffect(HbmPotion.radiation);
             }
-            case "plan_c" -> {
-                player.hurt(player.damageSources().genericKill(), 1000);
+            case PLAN_C -> {
+                player.hurt(player.damageSources().genericKill(), 100000.0F);
             }
-            case "siox" -> {
+            case RED -> {
+                if (HbmPotion.death != null) {
+                    player.addEffect(new MobEffectInstance(HbmPotion.death, 60 * 60 * 20, 0));
+                }
+            }
+            case RADX -> {
+                if (HbmPotion.radx != null) {
+                    player.addEffect(new MobEffectInstance(HbmPotion.radx, 3 * 60 * 20, 3));
+                }
+            }
+            case SIOX -> {
                 HbmLivingProps.setAsbestos(player, 0);
+                HbmLivingProps.setBlackLung(player, Math.min(HbmLivingProps.getBlackLung(player), HbmLivingProps.maxBlacklung / 5));
             }
-            case "pill_herbal" -> {
+            case HERBAL -> {
                 HbmLivingProps.setAsbestos(player, 0);
-                HbmLivingProps.incrementRadiation(player, -100F);
+                HbmLivingProps.setBlackLung(player, Math.min(HbmLivingProps.getBlackLung(player), HbmLivingProps.maxBlacklung / 5));
+                HbmLivingProps.incrementRadiation(player, -100.0F);
                 player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 10 * 20, 0));
                 player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 10 * 60 * 20, 2));
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 10 * 60 * 20, 2));
                 player.addEffect(new MobEffectInstance(MobEffects.POISON, 5 * 20, 2));
             }
-            case "xanax" -> {
+            case XANAX -> {
                 double digamma = HbmLivingProps.getDigamma(player);
-                HbmLivingProps.setDigamma(player, Math.max(digamma - 0.5D, 0D));
+                HbmLivingProps.setDigamma(player, Math.max(digamma - 0.5, 0.0));
             }
-            case "chocolate" -> {
+            case FMN -> {
+                double digamma = HbmLivingProps.getDigamma(player);
+                HbmLivingProps.setDigamma(player, Math.min(digamma, 2.0));
+                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60, 0));
+            }
+            case FIVE_HTP -> {
+                HbmLivingProps.setDigamma(player, 0.0);
+                if (HbmPotion.stability != null) {
+                    player.addEffect(new MobEffectInstance(HbmPotion.stability, 10 * 60 * 20, 0));
+                }
+            }
+            case CHOCOLATE -> {
                 player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 60 * 20, 3));
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60 * 20, 3));
                 player.addEffect(new MobEffectInstance(MobEffects.JUMP, 60 * 20, 3));
-            }
-            case "fmn" -> {
-                double digamma = HbmLivingProps.getDigamma(player);
-                HbmLivingProps.setDigamma(player, Math.min(digamma, 2D));
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60, 0));
-            }
-            case "five_htp" -> {
-                HbmLivingProps.setDigamma(player, 0D);
             }
         }
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        switch (pillType) {
-            case "pill_iodine" -> tooltipComponents.add(Component.literal("Removes negative effects"));
-            case "plan_c" -> tooltipComponents.add(Component.literal("Deadly"));
-            case "radx" -> tooltipComponents.add(Component.literal("Increases radiation resistance by 0.4 for 3 minutes"));
-            case "siox" -> tooltipComponents.add(Component.literal("Reverses mesothelioma with the power of Asbestos!"));
-            case "pill_herbal" -> {
-                tooltipComponents.add(Component.literal("Effective treatment against lung disease and mild radiation poisoning"));
-                tooltipComponents.add(Component.literal("Comes with side effects"));
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        switch (type) {
+            case IODINE -> tooltip.add(Component.literal("Removes negative effects and radiation potion").withStyle(ChatFormatting.GRAY));
+            case PLAN_C -> tooltip.add(Component.literal("Deadly").withStyle(ChatFormatting.DARK_RED));
+            case RADX -> tooltip.add(Component.literal("Increases radiation resistance for 3 minutes").withStyle(ChatFormatting.GOLD));
+            case SIOX -> tooltip.add(Component.literal("Reverses mesothelioma with the power of Asbestos!").withStyle(ChatFormatting.AQUA));
+            case HERBAL -> {
+                tooltip.add(Component.literal("Effective treatment against lung disease and mild radiation poisoning").withStyle(ChatFormatting.GREEN));
+                tooltip.add(Component.literal("Comes with side effects").withStyle(ChatFormatting.RED));
             }
-            case "xanax" -> tooltipComponents.add(Component.literal("Removes 500mDRX"));
-            case "fmn" -> tooltipComponents.add(Component.literal("Removes all DRX above 2,000mDRX"));
-            case "five_htp" -> tooltipComponents.add(Component.literal("Removes all DRX, Stability for 10 minutes"));
+            case XANAX -> tooltip.add(Component.literal("Removes 500mDRX").withStyle(ChatFormatting.LIGHT_PURPLE));
+            case FMN -> tooltip.add(Component.literal("Removes all DRX above 2,000mDRX").withStyle(ChatFormatting.LIGHT_PURPLE));
+            case FIVE_HTP -> tooltip.add(Component.literal("Removes all DRX, grants Stability for 10 minutes").withStyle(ChatFormatting.LIGHT_PURPLE));
+            case CHOCOLATE -> tooltip.add(Component.literal("Sugar rush!").withStyle(ChatFormatting.GOLD));
+            case RED -> tooltip.add(Component.literal("Pure death").withStyle(ChatFormatting.DARK_RED));
         }
     }
 }

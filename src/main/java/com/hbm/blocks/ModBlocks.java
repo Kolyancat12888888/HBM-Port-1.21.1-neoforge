@@ -145,6 +145,9 @@ public class ModBlocks {
 	public static final DeferredBlock<Block> ORE_NETHER_URANIUM = regStone("ore_nether_uranium", 3.0F, 10.0F);
 	public static final DeferredBlock<Block> ORE_NETHER_URANIUM_SCORCHED = regStone("ore_nether_uranium_scorched", 3.0F, 10.0F);
 	public static final DeferredBlock<Block> ORE_NETHER_SCHRABIDIUM = regStone("ore_nether_schrabidium", 5.0F, 20.0F);
+	public static final DeferredBlock<Block> WASTE_LEAVES = register("waste_leaves", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).strength(0.2F)));
+	public static final DeferredBlock<Block> WASTE_GRASS_TALL = register("waste_grass_tall", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS).noCollission().instabreak()));
+	public static final DeferredBlock<Block> MUSH = register("mush", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).noCollission().instabreak()));
 
 	// Direct accessors for compatibility
 	public static Block ore_oil;
@@ -158,6 +161,9 @@ public class ModBlocks {
 	public static Block waste_mycelium;
 	public static Block waste_trinitite;
 	public static Block waste_trinitite_red;
+	public static Block waste_leaves;
+	public static Block waste_grass_tall;
+	public static Block mush;
 	public static Block waste_log;
 	public static Block waste_planks;
 	public static Block frozen_grass;
@@ -228,6 +234,9 @@ public class ModBlocks {
 		waste_mycelium = WASTE_MYCELIUM.get();
 		waste_trinitite = WASTE_TRINITITE.get();
 		waste_trinitite_red = WASTE_TRINITITE_RED.get();
+		waste_leaves = WASTE_LEAVES.get();
+		waste_grass_tall = WASTE_GRASS_TALL.get();
+		mush = MUSH.get();
 		waste_log = WASTE_LOG.get();
 		waste_planks = WASTE_PLANKS.get();
 		frozen_grass = FROZEN_GRASS.get();
