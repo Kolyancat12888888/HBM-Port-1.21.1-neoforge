@@ -1,0 +1,126 @@
+package com.hbm.inventory.material;
+
+import com.hbm.inventory.OreDictManager.DictFrame;
+import com.hbm.main.MainRegistry;
+import com.hbm.util.I18nUtil;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
+
+/**
+ * Encapsulates materials that are listed as DictFrames.
+ * @author hbm
+ */
+public class NTMMaterial {
+
+	public final int id;
+	public String[] names;
+	public Set<MaterialShapes> autogen = new HashSet<>();
+	public Set<MatTraits> traits = new HashSet<>();
+	public SmeltingBehavior smeltable = SmeltingBehavior.NOT_SMELTABLE;
+	public int solidColorLight = 0xFF4A00;
+	public int solidColorDark = 0x802000;
+	public int moltenColor = 0xFF4A00;
+
+	public NTMMaterial smeltsInto;
+	public int convIn;
+	public int convOut;
+
+	public NTMMaterial(int id, DictFrame dict) {
+		this.names = dict.mats;
+		this.id = id;
+
+		this.smeltsInto = this;
+		this.convIn = 1;
+		this.convOut = 1;
+
+		for (String name : dict.mats) {
+			Mats.matByName.put(name, this);
+		}
+
+		Mats.orderedList.add(this);
+		Mats.matById.put(id, this);
+	}
+
+	public String getTranslationKey() {
+		return "hbmmat." + this.names[0].toLowerCase(Locale.US);
+	}
+
+	public String getLocalizedName() {
+		return I18nUtil.resolveKey(getTranslationKey());
+	}
+
+	public NTMMaterial setConversion(NTMMaterial mat, int in, int out) {
+		this.smeltsInto = mat;
+		this.convIn = in;
+		this.convOut = out;
+		return this;
+	}
+
+	/** Shapes for autogen */
+	public NTMMaterial setAutogen(MaterialShapes... shapes) {
+		for (MaterialShapes shape : shapes) {
+			if (shape != null) {
+				this.autogen.add(shape);
+			} else {
+				MainRegistry.LOGGER.warn("Warning: Null MaterialShape passed to setAutogen for {}", this.names[0]);
+			}
+		}
+		return this;
+	}
+
+	public Set<MaterialShapes> getAutogen() {
+		return this.autogen;
+	}
+
+	/** Traits for recipe detection */
+	public NTMMaterial setTraits(MatTraits... traits) {
+		this.traits.addAll(Arrays.asList(traits));
+		return this;
+	}
+
+	public NTMMaterial m() { this.traits.add(MatTraits.METAL); return this; }
+	public NTMMaterial n() { this.traits.add(MatTraits.NONMETAL); return this; }
+
+	/** Defines smelting behavior */
+	public NTMMaterial smeltable(SmeltingBehavior behavior) {
+		this.smeltable = behavior;
+		return this;
+	}
+
+	public NTMMaterial setSolidColor(int colorLight, int colorDark) {
+		this.solidColorLight = colorLight;
+		this.solidColorDark = colorDark;
+		return this;
+	}
+
+	public NTMMaterial setMoltenColor(int color) {
+		this.moltenColor = color;
+		return this;
+	}
+
+	public ItemStack make(Item item, int amount) {
+		return new ItemStack(item, amount);
+	}
+
+	public ItemStack make(Item item) {
+		return make(item, 1);
+	}
+
+	public enum SmeltingBehavior {
+		NOT_SMELTABLE,	// anything that can't be smelted or doesn't belong in a smelter
+		VAPORIZES,		// can't be smelted because the material would vaporize
+		BREAKS,			// can't be smelted because the material doesn't survive temperatures
+		SMELTABLE,		// mostly metal
+		ADDITIVE		// stuff like coal which isn't smeltable but can be put in a crucible
+	}
+
+	public enum MatTraits {
+		METAL,		// metal(like), smeltable by arc furnaces
+		NONMETAL	// non-metal(like), for gems, non-alloy compounds
+	}
+}

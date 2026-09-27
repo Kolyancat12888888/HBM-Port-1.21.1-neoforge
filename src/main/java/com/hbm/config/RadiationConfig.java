@@ -1,0 +1,41 @@
+package com.hbm.config;
+
+public class RadiationConfig {
+    public static int rain = 0;
+    public static int cont = 0;
+    public static int fogRad = 100;
+    public static int fogCh = 50;
+    public static int worldRad = 10;
+    public static int worldRadThreshold = 20;
+    public static boolean worldRadEffects = true;
+    public static boolean enableContamination = true;
+    public static boolean enableContaminationOnGround = false;
+    public static int blocksFallCh = 100;
+    public static int fireDuration = 4 * 20;
+    public static boolean neutronActivation = false;
+    public static int neutronActivationThreshold = 15;
+    public static int digammaX = 16;
+    public static int digammaY = 18;
+    public static int hazardRate = 5;
+    public static boolean disableAsbestos = false;
+    public static boolean disableBlinding = false;
+    public static boolean disableCoal = false;
+    public static boolean disableExplosive = false;
+    public static boolean disableHydro = false;
+    public static boolean disableHot = false;
+    public static boolean disableCold = false;
+    public static boolean disableToxic = false;
+    public static boolean enablePollution = true;
+    public static boolean enableLeadFromBlocks = true;
+    public static boolean enableLeadPoisoning = true;
+    public static boolean enableSootFog = true;
+    public static boolean enablePoison = true;
+    public static double buffMobThreshold = 15D;
+    public static double sootFogThreshold = 35D;
+    public static double sootFogDivisor = 120D;
+    public static double smokeStackSootMult = 0.8;
+    public static int radTickRate = 1;
+    public static double radHalfLifeSeconds = 120D;
+    public static double radDiffusivity = 10.0;
+    public static double chunkRadCap = -1;
+}
