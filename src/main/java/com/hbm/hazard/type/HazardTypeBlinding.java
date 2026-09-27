@@ -2,10 +2,13 @@ package com.hbm.hazard.type;
 
 import com.hbm.config.RadiationConfig;
 import com.hbm.hazard.modifier.IHazardModifier;
+import com.hbm.util.ArmorRegistry;
+import com.hbm.util.ArmorRegistry.HazardClass;
 import com.hbm.util.I18nUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -20,7 +23,10 @@ public class HazardTypeBlinding implements IHazardType {
     @Override
     public void onUpdate(final LivingEntity target, final double level, final ItemStack stack) {
         if (RadiationConfig.disableBlinding) return;
-        target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int) level * hazardRate, 0));
+
+        if (!ArmorRegistry.hasProtection(target, EquipmentSlot.HEAD, HazardClass.LIGHT)) {
+            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int) level * hazardRate, 0));
+        }
     }
 
     @Override

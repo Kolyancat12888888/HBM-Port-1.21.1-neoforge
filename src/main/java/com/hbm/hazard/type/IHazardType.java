@@ -15,10 +15,26 @@ import java.util.List;
 public interface IHazardType {
     int hazardRate = RadiationConfig.hazardRate;
 
+    /**
+     * Does the thing. Called by HazardEntry.applyHazard
+     * @param target the holder
+     * @param level the final level after calculating all the modifiers
+     */
     void onUpdate(LivingEntity target, double level, ItemStack stack);
 
+    /**
+     * Updates the hazard for dropped items. Used for things like explosive and hydroactive items.
+     */
     void updateEntity(ItemEntity item, double level);
 
+    /**
+     * Adds item tooltip info.
+     */
     @OnlyIn(Dist.CLIENT)
     void addHazardInformation(Player player, List<Component> list, double level, ItemStack stack, List<IHazardModifier> modifiers);
+
+    @FunctionalInterface
+    interface HazardInfoConsumer {
+        void accept(Player player, List<Component> list, double level, ItemStack stack, List<IHazardModifier> modifiers);
+    }
 }

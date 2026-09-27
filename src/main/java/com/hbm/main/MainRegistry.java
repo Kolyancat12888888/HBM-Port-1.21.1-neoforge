@@ -52,5 +52,14 @@ public class MainRegistry {
 
         // Register attachments
         HbmAttachments.register(modEventBus);
+
+        // Initialize Hazard Registry & Transformers
+        modEventBus.addListener((net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) -> {
+            event.enqueueWork(() -> {
+                com.hbm.items.ModItems.initAccessors();
+                com.hbm.hazard.HazardRegistry.registerItems();
+                com.hbm.hazard.HazardRegistry.registerTrafos();
+            });
+        });
     }
 }

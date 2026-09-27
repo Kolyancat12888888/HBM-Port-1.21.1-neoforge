@@ -1,11 +1,14 @@
 package com.hbm.hazard.type;
 
 import com.hbm.config.RadiationConfig;
+import com.hbm.handler.ArmorUtil;
 import com.hbm.hazard.helper.HazardHelper;
 import com.hbm.hazard.modifier.IHazardModifier;
+import com.hbm.util.ArmorRegistry;
 import com.hbm.util.I18nUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,28 +27,43 @@ public class HazardTypeToxic implements IHazardType {
         if (RadiationConfig.disableToxic) return;
 
         final boolean reacher = HazardHelper.isHoldingReacher(target);
-        if (reacher) return;
+        boolean hasToxFilter = false;
+        boolean hasHazmat = false;
 
-        applyMobEffect(target, MobEffects.WEAKNESS, 110, (int) (level - 1));
-
-        if (level > 2) {
-            applyMobEffect(target, MobEffects.MOVEMENT_SLOWDOWN, 110, (int) Math.min(4, level - 4));
+        if (target instanceof Player player) {
+            hasToxFilter = ArmorRegistry.hasProtection(player, EquipmentSlot.HEAD, ArmorRegistry.HazardClass.NERVE_AGENT);
+            if (hasToxFilter) {
+                ArmorUtil.damageGasMaskFilter(player, hazardRate);
+            }
+            hasHazmat = ArmorUtil.checkForHazmat(player);
         }
 
-        if (level > 4) {
-            applyMobEffect(target, MobEffects.HUNGER, 110, (int) level);
+        final boolean isUnprotected = !(hasToxFilter || hasHazmat || reacher);
+
+        if (isUnprotected) {
+            applyMobEffect(target, MobEffects.WEAKNESS, 110, (int) (level - 1));
+
+            if (level > 2) {
+                applyMobEffect(target, MobEffects.MOVEMENT_SLOWDOWN, 110, (int) Math.min(4, level - 4));
+            }
+
+            if (level > 4) {
+                applyMobEffect(target, MobEffects.HUNGER, 110, (int) level);
+            }
+
+            if (level > 6 && target.getRandom().nextInt((int) Math.max(1, 2000 / level)) == 0) {
+                applyMobEffect(target, MobEffects.POISON, 110, (int) (level - 4));
+            }
         }
 
-        if (level > 6 && target.getRandom().nextInt((int) Math.max(1, 2000 / level)) == 0) {
-            applyMobEffect(target, MobEffects.POISON, 110, (int) (level - 4));
-        }
+        if (!hasHazmat || !hasToxFilter || !reacher) {
+            if (level > 8) {
+                applyMobEffect(target, MobEffects.DIG_SLOWDOWN, 110, (int) (level - 8));
+            }
 
-        if (level > 8) {
-            applyMobEffect(target, MobEffects.DIG_SLOWDOWN, 110, (int) (level - 8));
-        }
-
-        if (level > 16) {
-            applyMobEffect(target, MobEffects.HARM, 110, (int) (level - 16));
+            if (level > 16) {
+                applyMobEffect(target, MobEffects.HARM, 110, (int) (level - 16));
+            }
         }
     }
 

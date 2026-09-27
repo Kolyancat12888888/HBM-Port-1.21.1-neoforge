@@ -1,6 +1,8 @@
 package com.hbm.hazard.type;
 
 import com.hbm.config.RadiationConfig;
+import com.hbm.explosion.ExplosionNukeGeneric;
+import com.hbm.handler.radiation.ChunkRadiationManager;
 import com.hbm.hazard.modifier.IHazardModifier;
 import com.hbm.util.I18nUtil;
 import net.minecraft.core.BlockPos;
@@ -35,6 +37,12 @@ public class HazardTypeContaminating implements IHazardType {
         if (world.isClientSide()) return;
 
         if (item.onGround()) {
+            BlockPos pos = item.blockPosition();
+            int radius = computeRadius(level);
+            if (radius > 1) {
+                ChunkRadiationManager.proxy.incrementRad(world, pos, (float) level);
+                ExplosionNukeGeneric.waste(world, pos, radius);
+            }
             item.discard();
         }
     }
