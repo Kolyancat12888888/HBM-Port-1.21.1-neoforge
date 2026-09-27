@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TileEntityRBMKControl extends TileEntityRBMKSlottedBase {
+public class TileEntityRBMKControl extends TileEntityRBMKSlottedBase implements IRBMKFluxReceiver {
 
 	public double lastLevel;
 	public double levelVal;
@@ -22,6 +22,13 @@ public class TileEntityRBMKControl extends TileEntityRBMKSlottedBase {
 	@Override
 	public RBMKColumn.ColumnType getConsoleType() {
 		return RBMKColumn.ColumnType.CONTROL;
+	}
+
+	@Override
+	public void receiveFlux(double fluxQuantity, double fastRatio) {
+		// Control rod absorbs neutrons according to insertion level (0.0 = withdrawn, 1.0 = fully inserted)
+		double absorbed = fluxQuantity * this.levelVal;
+		this.heat += absorbed * 0.0005D;
 	}
 
 	@Override
