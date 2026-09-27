@@ -20,14 +20,17 @@ import java.util.function.Supplier;
 public class ModBlocks {
 
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MainRegistry.MODID);
+	public static final DeferredRegister.Items BLOCK_ITEMS = DeferredRegister.createItems(MainRegistry.MODID);
 	public static final List<Block> ALL_BLOCKS = new ArrayList<>();
 
 	private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> supplier) {
-		return BLOCKS.register(name, () -> {
-			T block = supplier.get();
-			ALL_BLOCKS.add(block);
-			return block;
+		DeferredBlock<T> block = BLOCKS.register(name, () -> {
+			T b = supplier.get();
+			ALL_BLOCKS.add(b);
+			return b;
 		});
+		BLOCK_ITEMS.register(name, () -> new net.minecraft.world.item.BlockItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+		return block;
 	}
 
 	private static DeferredBlock<Block> reg(String name, float hardness, float resistance) {
@@ -272,6 +275,7 @@ public class ModBlocks {
 
 	public static void register(IEventBus bus) {
 		BLOCKS.register(bus);
+		BLOCK_ITEMS.register(bus);
 	}
 
 	public static void initAccessors() {
