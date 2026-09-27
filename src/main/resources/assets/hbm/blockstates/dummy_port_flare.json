@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/dummy_port_flare"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:dummy_port_flare" }
+	}
 }

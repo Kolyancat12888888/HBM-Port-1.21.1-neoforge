@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_cadmium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_cadmium" }
+	}
 }

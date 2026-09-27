@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/deco_titanium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:deco_titanium" }
+	}
 }

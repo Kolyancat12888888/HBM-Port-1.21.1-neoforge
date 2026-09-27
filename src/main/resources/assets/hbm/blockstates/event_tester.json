@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/event_tester"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:event_tester" }
+	}
 }

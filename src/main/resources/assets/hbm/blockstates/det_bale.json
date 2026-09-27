@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/det_bale"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:det_bale" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/mine_shrap"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:mine_shrap" }
+	}
 }

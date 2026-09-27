@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/dungeon_spawner"
+    "variants": {
+        "normal": { "model": "hbm:dungeon_spawner" }
     }
-  }
 }

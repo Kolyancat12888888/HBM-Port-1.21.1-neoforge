@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "hbm:block/rebar"
-    }
+    "normal": { "model": "hbm:rebar" }
   }
 }

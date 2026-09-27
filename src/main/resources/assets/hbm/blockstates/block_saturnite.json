@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_saturnite"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_saturnite" }
+	}
 }

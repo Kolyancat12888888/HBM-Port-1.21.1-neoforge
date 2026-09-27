@@ -1,28 +1,28 @@
 {
   "variants": {
     "facing=down": {
-      "model": "hbm:block/capacitor_niobium",
+      "model": "hbm:capacitor_niobium",
       "x": 180
     },
     "facing=up": {
-      "model": "hbm:block/capacitor_niobium"
+      "model": "hbm:capacitor_niobium"
     },
     "facing=north": {
-      "model": "hbm:block/capacitor_niobium",
-      "x": 90
+      "model": "hbm:capacitor_niobium",
+	  "x": 90
     },
     "facing=south": {
-      "model": "hbm:block/capacitor_niobium",
+      "model": "hbm:capacitor_niobium",
       "x": 270
     },
     "facing=west": {
-      "model": "hbm:block/capacitor_niobium",
-      "x": 90,
+      "model": "hbm:capacitor_niobium",
+	  "x": 90,
       "y": 270
     },
     "facing=east": {
-      "model": "hbm:block/capacitor_niobium",
-      "x": 90,
+      "model": "hbm:capacitor_niobium",
+	  "x": 90,
       "y": 90
     }
   }

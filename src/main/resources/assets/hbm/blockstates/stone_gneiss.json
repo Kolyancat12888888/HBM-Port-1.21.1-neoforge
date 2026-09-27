@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/stone_gneiss"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:stone_gneiss" }
+	}
 }

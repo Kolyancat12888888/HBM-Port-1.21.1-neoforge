@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_radar"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_radar" }
+	}
 }

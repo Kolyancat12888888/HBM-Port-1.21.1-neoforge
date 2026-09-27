@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/gas_explosive"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:gas_explosive" }
+	}
 }

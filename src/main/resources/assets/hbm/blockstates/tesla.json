@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/tesla"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:tesla" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/baleonitite_core"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:baleonitite_core" }
+	}
 }

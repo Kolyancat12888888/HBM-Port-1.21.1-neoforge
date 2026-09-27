@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/test_render"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:test_render" }
+	}
 }

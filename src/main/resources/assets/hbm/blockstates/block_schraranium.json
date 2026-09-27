@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_schraranium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_schraranium" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/fluid_duct_solid"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:fluid_duct_solid" }
+	}
 }

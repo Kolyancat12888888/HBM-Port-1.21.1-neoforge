@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/fatduck"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:fatduck" }
+	}
 }

@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "hbm:block/drone_dock"
-    }
+    "normal": { "model": "hbm:drone_dock" }
   }
 }

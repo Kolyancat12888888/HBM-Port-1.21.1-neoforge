@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_plutonium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_plutonium" }
+	}
 }

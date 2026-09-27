@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_lead"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_lead" }
+	}
 }

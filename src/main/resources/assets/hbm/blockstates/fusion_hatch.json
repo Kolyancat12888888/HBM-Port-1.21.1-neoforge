@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/fusion_hatch"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:fusion_hatch" }
+	}
 }

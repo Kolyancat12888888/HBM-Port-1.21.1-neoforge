@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/dirt_dead"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:dirt_dead" }
+	}
 }

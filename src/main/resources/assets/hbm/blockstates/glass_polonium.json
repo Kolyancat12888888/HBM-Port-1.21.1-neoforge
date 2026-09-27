@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/glass_polonium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:glass_polonium" }
+	}
 }

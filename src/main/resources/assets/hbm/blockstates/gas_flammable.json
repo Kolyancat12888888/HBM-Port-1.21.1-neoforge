@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/gas_flammable"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:gas_flammable" }
+	}
 }

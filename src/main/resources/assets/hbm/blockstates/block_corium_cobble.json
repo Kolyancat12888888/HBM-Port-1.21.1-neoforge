@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_corium_cobble"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_corium_cobble" }
+	}
 }

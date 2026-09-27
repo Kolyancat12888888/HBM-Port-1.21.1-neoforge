@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/basalt_tiles"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:basalt_tiles" }
+	}
 }

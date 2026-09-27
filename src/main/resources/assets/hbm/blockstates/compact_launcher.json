@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/compact_launcher"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:compact_launcher" }
+	}
 }

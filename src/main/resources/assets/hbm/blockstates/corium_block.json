@@ -1,13 +1,11 @@
 {
-  "forge_marker": 1,
-  "variants": {
-    "": [
-      {
-        "model": "forge:fluid",
-        "custom": {
-          "fluid": "corium_fluid"
-        }
-      }
-    ]
-  }
+	"forge_marker": 1,
+	"variants": {
+		"normal": [{
+			"model": "forge:fluid",
+			"custom": {
+				"fluid": "corium_fluid"
+			}
+		}]
+	}
 }

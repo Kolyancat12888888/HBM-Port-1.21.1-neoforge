@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/deco_rbmk_panel"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:deco_rbmk_panel" }
+	}
 }

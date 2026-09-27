@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/dfc_core"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:dfc_core" }
+	}
 }

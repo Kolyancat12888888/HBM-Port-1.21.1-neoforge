@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/crystal_pulsar"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:crystal_pulsar" }
+	}
 }

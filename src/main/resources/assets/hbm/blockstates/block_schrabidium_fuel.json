@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_schrabidium_fuel"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_schrabidium_fuel" }
+	}
 }

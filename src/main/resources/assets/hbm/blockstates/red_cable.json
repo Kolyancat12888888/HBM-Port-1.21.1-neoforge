@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/red_cable"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:red_cable" }
+	}
 }

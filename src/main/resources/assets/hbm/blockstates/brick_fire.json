@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/brick_fire"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:brick_fire" }
+	}
 }

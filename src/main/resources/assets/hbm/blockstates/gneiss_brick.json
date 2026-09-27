@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/gneiss_brick"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:gneiss_brick" }
+	}
 }

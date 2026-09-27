@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_sulfur"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_sulfur" }
+	}
 }

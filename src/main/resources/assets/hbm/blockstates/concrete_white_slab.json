@@ -1,10 +1,6 @@
 {
-  "variants": {
-    "half=bottom,variant=default": {
-      "model": "hbm:block/half_slab_concrete_white"
-    },
-    "half=top,variant=default": {
-      "model": "hbm:block/upper_slab_concrete_white"
+    "variants": {
+        "half=bottom,variant=default": { "model": "hbm:half_slab_concrete_white" },
+        "half=top,variant=default": { "model": "hbm:upper_slab_concrete_white" }
     }
-  }
 }

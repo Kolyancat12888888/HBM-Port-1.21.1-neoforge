@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_teleporter"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_teleporter" }
+	}
 }

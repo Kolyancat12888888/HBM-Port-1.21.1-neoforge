@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/secure_access_door"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:secure_access_door" }
+	}
 }

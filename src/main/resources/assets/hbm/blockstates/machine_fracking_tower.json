@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_fracking_tower"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_fracking_tower" }
+	}
 }

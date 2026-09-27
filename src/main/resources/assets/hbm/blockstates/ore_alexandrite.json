@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_alexandrite"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_alexandrite" }
+	}
 }

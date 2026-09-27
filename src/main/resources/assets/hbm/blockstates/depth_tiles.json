@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/depth_tiles"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:depth_tiles" }
+	}
 }

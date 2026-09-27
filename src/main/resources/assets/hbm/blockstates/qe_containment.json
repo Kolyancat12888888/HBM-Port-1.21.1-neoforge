@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/qe_containment"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:qe_containment" }
+	}
 }

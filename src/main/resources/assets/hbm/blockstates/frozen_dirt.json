@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/frozen_dirt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:frozen_dirt" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/red_pylon_large"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:red_pylon_large" }
+	}
 }

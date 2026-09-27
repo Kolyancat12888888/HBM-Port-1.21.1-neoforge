@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/pink_planks"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:pink_planks" }
+	}
 }

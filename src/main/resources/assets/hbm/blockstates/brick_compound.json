@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/brick_compound"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:brick_compound" }
+	}
 }

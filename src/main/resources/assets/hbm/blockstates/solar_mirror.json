@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/solar_mirror"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:solar_mirror" }
+	}
 }

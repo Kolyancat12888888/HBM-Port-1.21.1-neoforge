@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/tumor"
+    "variants": {
+        "normal": { "model": "hbm:tumor" }
     }
-  }
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/fireworks"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:fireworks" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/rbmk_moderator"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:rbmk_moderator" }
+	}
 }

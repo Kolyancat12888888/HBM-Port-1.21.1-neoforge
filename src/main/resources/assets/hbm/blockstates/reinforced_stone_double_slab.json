@@ -1,10 +1,6 @@
 {
-  "variants": {
-    "half=bottom,variant=default": {
-      "model": "hbm:block/reinforced_stone"
-    },
-    "half=top,variant=default": {
-      "model": "hbm:block/reinforced_stone"
+    "variants": {
+        "half=bottom,variant=default": { "model": "hbm:reinforced_stone" },
+        "half=top,variant=default": { "model": "hbm:reinforced_stone" }
     }
-  }
 }

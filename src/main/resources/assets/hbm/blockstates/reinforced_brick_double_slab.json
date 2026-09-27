@@ -1,10 +1,6 @@
 {
-  "variants": {
-    "half=bottom,variant=default": {
-      "model": "hbm:block/reinforced_brick"
-    },
-    "half=top,variant=default": {
-      "model": "hbm:block/reinforced_brick"
+    "variants": {
+        "half=bottom,variant=default": { "model": "hbm:reinforced_brick" },
+        "half=top,variant=default": { "model": "hbm:reinforced_brick" }
     }
-  }
 }

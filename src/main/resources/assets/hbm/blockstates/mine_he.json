@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/mine_he"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:mine_he" }
+	}
 }

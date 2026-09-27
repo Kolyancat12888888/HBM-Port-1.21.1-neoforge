@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/deco_rbmk"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:deco_rbmk" }
+	}
 }

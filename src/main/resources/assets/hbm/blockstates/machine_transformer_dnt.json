@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_transformer_dnt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_transformer_dnt" }
+	}
 }

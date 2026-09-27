@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_siren"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_siren" }
+	}
 }

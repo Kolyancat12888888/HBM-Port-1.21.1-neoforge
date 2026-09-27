@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/barricade"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:barricade" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_rare"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_rare" }
+	}
 }

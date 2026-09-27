@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "hbm:block/large_vehicle_door"
-    }
+    "normal": { "model": "hbm:large_vehicle_door" }
   }
 }

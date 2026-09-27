@@ -1,16 +1,8 @@
 {
-  "variants": {
-    "facing=north": {
-      "model": "hbm:block/boat"
-    },
-    "facing=south": {
-      "model": "hbm:block/boat"
-    },
-    "facing=west": {
-      "model": "hbm:block/boat"
-    },
-    "facing=east": {
-      "model": "hbm:block/boat"
-    }
-  }
+	"variants": {
+		"facing=north": { "model": "hbm:boat" },
+     	   	"facing=south": { "model": "hbm:boat" },
+      	  	"facing=west":  { "model": "hbm:boat" },
+      		"facing=east":  { "model": "hbm:boat" }
+	}
 }

@@ -1,7 +1,7 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_lpw2"
+    "variants": {
+        "normal": {
+            "model": "hbm:machine_lpw2"
+        }
     }
-  }
 }

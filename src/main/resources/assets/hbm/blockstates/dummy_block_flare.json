@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/dummy_block_flare"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:dummy_block_flare" }
+	}
 }

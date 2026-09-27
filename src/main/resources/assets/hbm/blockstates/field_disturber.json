@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/field_disturber"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:field_disturber" }
+	}
 }

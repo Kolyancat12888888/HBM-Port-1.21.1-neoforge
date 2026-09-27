@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/plant_dead_generic"
+    "variants": {
+        "normal": { "model": "hbm:plant_dead_generic" }
     }
-  }
 }

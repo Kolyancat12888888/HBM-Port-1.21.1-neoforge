@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/crystal_hardened"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:crystal_hardened" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/vent_pink_cloud"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:vent_pink_cloud" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_combine_factory"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_combine_factory" }
+	}
 }

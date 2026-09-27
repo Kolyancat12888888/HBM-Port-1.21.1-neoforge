@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_meteor_copper"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_meteor_copper" }
+	}
 }

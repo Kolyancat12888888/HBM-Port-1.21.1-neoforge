@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/crate_metal"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:crate_metal" }
+	}
 }

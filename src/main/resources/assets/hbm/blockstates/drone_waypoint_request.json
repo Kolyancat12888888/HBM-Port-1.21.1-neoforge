@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "hbm:block/drone_waypoint_request"
-    }
+    "normal": { "model": "hbm:drone_waypoint_request" }
   }
 }

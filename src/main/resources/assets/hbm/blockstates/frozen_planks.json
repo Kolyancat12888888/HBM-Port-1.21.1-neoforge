@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/frozen_planks"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:frozen_planks" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_bismuth"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_bismuth" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/basalt_gem"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:basalt_gem" }
+	}
 }

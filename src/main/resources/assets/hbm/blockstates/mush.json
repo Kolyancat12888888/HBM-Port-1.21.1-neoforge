@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/mush"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:mush" }
+	}
 }

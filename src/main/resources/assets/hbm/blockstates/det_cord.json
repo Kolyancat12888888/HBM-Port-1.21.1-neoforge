@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/det_cord"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:det_cord" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/glass_ash"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:glass_ash" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_htr3"
+    "variants": {
+        "normal": { "model": "hbm:machine_htr3" }
     }
-  }
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/struct_scaffold"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:struct_scaffold" }
+	}
 }

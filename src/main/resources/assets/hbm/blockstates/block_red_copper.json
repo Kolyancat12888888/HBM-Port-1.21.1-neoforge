@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_red_copper"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_red_copper" }
+	}
 }

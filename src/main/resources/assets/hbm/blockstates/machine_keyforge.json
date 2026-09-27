@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_keyforge"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_keyforge" }
+	}
 }

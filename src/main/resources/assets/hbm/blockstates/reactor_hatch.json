@@ -1,19 +1,8 @@
 {
-  "variants": {
-    "facing=north": {
-      "model": "hbm:block/reactor_hatch"
-    },
-    "facing=south": {
-      "model": "hbm:block/reactor_hatch",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "hbm:block/reactor_hatch",
-      "y": 270
-    },
-    "facing=east": {
-      "model": "hbm:block/reactor_hatch",
-      "y": 90
-    }
-  }
+	"variants": {
+		"facing=north": { "model": "hbm:reactor_hatch" },
+     	   	"facing=south": { "model": "hbm:reactor_hatch", "y": 180 },
+      	  	"facing=west":  { "model": "hbm:reactor_hatch", "y": 270 },
+      		"facing=east":  { "model": "hbm:reactor_hatch", "y": 90 }
+	}
 }

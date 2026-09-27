@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/det_n2"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:det_n2" }
+	}
 }

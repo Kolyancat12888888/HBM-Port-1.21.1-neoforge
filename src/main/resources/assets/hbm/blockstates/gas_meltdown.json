@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/gas_meltdown"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:gas_meltdown" }
+	}
 }

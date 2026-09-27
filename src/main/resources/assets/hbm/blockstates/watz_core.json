@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/watz_core"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:watz_core" }
+	}
 }

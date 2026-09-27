@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_cobalt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_cobalt" }
+	}
 }

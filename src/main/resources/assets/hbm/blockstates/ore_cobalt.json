@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_cobalt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_cobalt" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/lamp_demon"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:lamp_demon" }
+	}
 }

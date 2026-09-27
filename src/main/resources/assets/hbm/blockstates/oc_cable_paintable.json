@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/oc_cable_paintable"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:oc_cable_paintable" }
+	}
 }

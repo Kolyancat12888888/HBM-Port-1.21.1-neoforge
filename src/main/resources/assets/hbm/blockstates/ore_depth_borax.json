@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_depth_borax"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_depth_borax" }
+	}
 }

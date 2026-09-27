@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/brick_jungle_fragile"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:brick_jungle_fragile" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ore_australium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ore_australium" }
+	}
 }

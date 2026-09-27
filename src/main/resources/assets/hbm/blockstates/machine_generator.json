@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_generator"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:machine_generator" }
+	}
 }

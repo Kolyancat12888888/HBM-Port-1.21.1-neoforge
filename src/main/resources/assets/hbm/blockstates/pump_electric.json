@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/pump_electric"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:pump_electric" }
+	}
 }

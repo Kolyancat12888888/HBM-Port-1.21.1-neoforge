@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/watz_conductor"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:watz_conductor" }
+	}
 }

@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_polonium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_polonium" }
+	}
 }

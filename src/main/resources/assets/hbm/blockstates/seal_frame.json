@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/seal_frame"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:seal_frame" }
+	}
 }

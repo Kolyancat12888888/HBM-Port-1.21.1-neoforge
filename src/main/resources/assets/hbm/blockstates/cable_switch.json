@@ -1,10 +1,6 @@
 {
-  "variants": {
-    "state=true": {
-      "model": "hbm:block/cable_switch_on"
-    },
-    "state=false": {
-      "model": "hbm:block/cable_switch_off"
-    }
-  }
+	"variants": {
+		"state=true": { "model": "hbm:cable_switch_on" },
+		"state=false": { "model": "hbm:cable_switch_off" }
+	}
 }

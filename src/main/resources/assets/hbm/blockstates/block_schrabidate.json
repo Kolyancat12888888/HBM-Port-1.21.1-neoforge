@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_schrabidate"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_schrabidate" }
+	}
 }

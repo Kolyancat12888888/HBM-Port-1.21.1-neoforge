@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/hadron_coil_schrabidate"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:hadron_coil_schrabidate" }
+	}
 }

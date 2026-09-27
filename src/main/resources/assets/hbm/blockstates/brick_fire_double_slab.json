@@ -1,10 +1,6 @@
 {
-  "variants": {
-    "half=bottom,variant=default": {
-      "model": "hbm:block/brick_fire"
-    },
-    "half=top,variant=default": {
-      "model": "hbm:block/brick_fire"
+    "variants": {
+        "half=bottom,variant=default": { "model": "hbm:brick_fire" },
+        "half=top,variant=default": { "model": "hbm:brick_fire" }
     }
-  }
 }

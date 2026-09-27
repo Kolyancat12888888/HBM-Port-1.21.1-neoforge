@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/deco_tungsten"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:deco_tungsten" }
+	}
 }

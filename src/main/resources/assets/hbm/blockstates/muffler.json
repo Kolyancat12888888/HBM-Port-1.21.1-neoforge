@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/muffler"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:muffler" }
+	}
 }

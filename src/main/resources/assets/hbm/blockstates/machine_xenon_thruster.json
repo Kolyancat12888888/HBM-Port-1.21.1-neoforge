@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/machine_xenon_thruster"
+    "variants": {
+        "normal": { "model": "hbm:machine_xenon_thruster" }
     }
-  }
 }

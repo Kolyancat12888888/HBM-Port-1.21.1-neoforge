@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/ducrete"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:ducrete" }
+	}
 }

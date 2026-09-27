@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/basalt_smooth"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:basalt_smooth" }
+	}
 }

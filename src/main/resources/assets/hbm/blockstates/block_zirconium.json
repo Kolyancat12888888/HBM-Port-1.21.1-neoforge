@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/block_zirconium"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:block_zirconium" }
+	}
 }

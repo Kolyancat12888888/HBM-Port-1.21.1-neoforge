@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/mine_fat"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:mine_fat" }
+	}
 }

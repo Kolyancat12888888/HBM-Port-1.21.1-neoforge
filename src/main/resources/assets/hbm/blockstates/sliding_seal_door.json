@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/sliding_seal_door"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:sliding_seal_door" }
+	}
 }

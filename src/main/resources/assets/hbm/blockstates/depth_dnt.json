@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/depth_dnt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:depth_dnt" }
+	}
 }

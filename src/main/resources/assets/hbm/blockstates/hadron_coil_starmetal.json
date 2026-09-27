@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/hadron_coil_starmetal"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:hadron_coil_starmetal" }
+	}
 }

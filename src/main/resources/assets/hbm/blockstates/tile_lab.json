@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/tile_lab"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:tile_lab" }
+	}
 }

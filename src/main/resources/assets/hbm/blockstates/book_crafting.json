@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/book_crafting"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:book_crafting" }
+	}
 }

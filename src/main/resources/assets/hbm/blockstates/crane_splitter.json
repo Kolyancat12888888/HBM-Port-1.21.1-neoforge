@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "hbm:block/crane_splitter"
-    }
+    "normal": { "model": "hbm:crane_splitter" }
   }
 }

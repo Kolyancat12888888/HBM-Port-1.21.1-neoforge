@@ -1,7 +1,5 @@
 {
-  "variants": {
-    "": {
-      "model": "hbm:block/asphalt"
-    }
-  }
+	"variants": {
+		"normal": { "model": "hbm:asphalt" }
+	}
 }

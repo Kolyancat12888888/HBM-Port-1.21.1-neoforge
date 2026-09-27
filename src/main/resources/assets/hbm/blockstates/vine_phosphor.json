@@ -1,13 +1,13 @@
 {
-  "variants": {
-    "part=ground": {
-      "model": "hbm:block/vine_phosphor_ground"
-    },
-    "part=middle": {
-      "model": "hbm:block/vine_phosphor_middle"
-    },
-    "part=hang": {
-      "model": "hbm:block/vine_phosphor_hang"
+    "variants": {
+        "part=ground": {
+            "model": "hbm:vine_phosphor_ground"
+        },
+        "part=middle": {
+            "model": "hbm:vine_phosphor_middle"
+        },
+        "part=hang": {
+            "model": "hbm:vine_phosphor_hang"
+        }
     }
-  }
 }
