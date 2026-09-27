@@ -8627,5 +8627,15 @@
   "weapon.elecGun.glass_cannon.uv": "Ultraviolet Light",
   "weapon.elecGun.glass_cannon.visible": "Visible Light",
   "weapon.elecGun.glass_cannon.xray": "X-rays",
-  "weapon.elecGun.modeChange": "Firing Mode Changed to:"
+  "weapon.elecGun.modeChange": "Firing Mode Changed to:",
+  "itemGroup.tabBlocks": "NTM: Blocks",
+  "itemGroup.tabResource": "NTM: Resources & Materials",
+  "itemGroup.tabParts": "NTM: Machine Parts & Components",
+  "itemGroup.tabControl": "NTM: Reactor Control & Electronics",
+  "itemGroup.tabMachine": "NTM: Machines & Industry",
+  "itemGroup.tabNuke": "NTM: Nuclear Weapons & Explosives",
+  "itemGroup.tabMissile": "NTM: Missiles & Rocketry",
+  "itemGroup.tabWeapon": "NTM: Weapons & Ammunition",
+  "itemGroup.tabConsumable": "NTM: Medical & Consumables",
+  "itemGroup.tabTemplate": "NTM: Templates & Blueprints"
 }

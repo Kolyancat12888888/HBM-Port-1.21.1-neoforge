@@ -233,64 +233,89 @@ public class ModItems {
 	public static final DeferredItem<com.hbm.items.gear.ArmorAsbestos> ASBESTOS_BOOTS = register("asbestos_boots", () -> new com.hbm.items.gear.ArmorAsbestos(com.hbm.items.armor.ModArmorMaterials.ASBESTOS, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties()));
 
 	// Power Armor: RPA (Remnant Power Armor)
-	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_HELMET = register("rpa_helmet", () -> (com.hbm.items.armor.ArmorRPA) new com.hbm.items.armor.ArmorRPA(com.hbm.items.armor.ModArmorMaterials.RPA, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 2500000, 10000, 1000, 25)
-			.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(2.0D).addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 3)));
-	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_PLATE = register("rpa_plate", () -> (com.hbm.items.armor.ArmorRPA) new com.hbm.items.armor.ArmorRPA(com.hbm.items.armor.ModArmorMaterials.RPA, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 2500000, 10000, 10000, 25).cloneStats(RPA_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_LEGS = register("rpa_legs", () -> (com.hbm.items.armor.ArmorRPA) new com.hbm.items.armor.ArmorRPA(com.hbm.items.armor.ModArmorMaterials.RPA, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 2500000, 10000, 10000, 25).cloneStats(RPA_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_BOOTS = register("rpa_boots", () -> (com.hbm.items.armor.ArmorRPA) new com.hbm.items.armor.ArmorRPA(com.hbm.items.armor.ModArmorMaterials.RPA, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 2500000, 10000, 10000, 25).cloneStats(RPA_HELMET.get()));
+	private static com.hbm.items.armor.ArmorRPA createRPA(net.minecraft.world.item.ArmorItem.Type type, long consumption) {
+		return (com.hbm.items.armor.ArmorRPA) new com.hbm.items.armor.ArmorRPA(com.hbm.items.armor.ModArmorMaterials.RPA, type, new Item.Properties(), 2500000, 10000, consumption, 25)
+				.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(2.0D).addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 3));
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_HELMET = register("rpa_helmet", () -> createRPA(net.minecraft.world.item.ArmorItem.Type.HELMET, 1000));
+	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_PLATE = register("rpa_plate", () -> createRPA(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, 10000));
+	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_LEGS = register("rpa_legs", () -> createRPA(net.minecraft.world.item.ArmorItem.Type.LEGGINGS, 10000));
+	public static final DeferredItem<com.hbm.items.armor.ArmorRPA> RPA_BOOTS = register("rpa_boots", () -> createRPA(net.minecraft.world.item.ArmorItem.Type.BOOTS, 10000));
 
 	// Power Armor: FAU / Digamma
-	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_HELMET = register("fau_helmet", () -> (com.hbm.items.armor.ArmorDigamma) new com.hbm.items.armor.ArmorDigamma(com.hbm.items.armor.ModArmorMaterials.FAU, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 10000000, 100000, 25000, 1000)
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 1)).setHasGeigerSound(true).enableThermalSight(true).setHasHardLanding(true).setRadResist(4.0D));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_PLATE = register("fau_plate", () -> (com.hbm.items.armor.ArmorDigamma) new com.hbm.items.armor.ArmorDigamma(com.hbm.items.armor.ModArmorMaterials.FAU, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 10000000, 100000, 25000, 1000).cloneStats(FAU_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_LEGS = register("fau_legs", () -> (com.hbm.items.armor.ArmorDigamma) new com.hbm.items.armor.ArmorDigamma(com.hbm.items.armor.ModArmorMaterials.FAU, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 10000000, 100000, 25000, 1000).cloneStats(FAU_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_BOOTS = register("fau_boots", () -> (com.hbm.items.armor.ArmorDigamma) new com.hbm.items.armor.ArmorDigamma(com.hbm.items.armor.ModArmorMaterials.FAU, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 10000000, 100000, 25000, 1000).cloneStats(FAU_HELMET.get()));
+	private static com.hbm.items.armor.ArmorDigamma createFAU(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorDigamma) new com.hbm.items.armor.ArmorDigamma(com.hbm.items.armor.ModArmorMaterials.FAU, type, new Item.Properties(), 10000000, 100000, 25000, 1000)
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 1)).setHasGeigerSound(true).enableThermalSight(true).setHasHardLanding(true).setRadResist(4.0D);
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_HELMET = register("fau_helmet", () -> createFAU(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_PLATE = register("fau_plate", () -> createFAU(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_LEGS = register("fau_legs", () -> createFAU(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDigamma> FAU_BOOTS = register("fau_boots", () -> createFAU(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 	// Power Armor: DNS (Dineutronium Nanotech Suit)
-	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_HELMET = register("dns_helmet", () -> (com.hbm.items.armor.ArmorDNT) new com.hbm.items.armor.ArmorDNT(com.hbm.items.armor.ModArmorMaterials.DNS, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 1000000000L, 1000000L, 100000L, 115)
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 9))
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DIG_SPEED, 40, 7))
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 2))
-			.setHasGeigerSound(true).enableVATS(true).enableThermalSight(true).setHasHardLanding(true).setRadResist(5.0D));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_PLATE = register("dns_plate", () -> (com.hbm.items.armor.ArmorDNT) new com.hbm.items.armor.ArmorDNT(com.hbm.items.armor.ModArmorMaterials.DNS, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 1000000000L, 1000000L, 100000L, 115).cloneStats(DNS_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_LEGS = register("dns_legs", () -> (com.hbm.items.armor.ArmorDNT) new com.hbm.items.armor.ArmorDNT(com.hbm.items.armor.ModArmorMaterials.DNS, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 1000000000L, 1000000L, 100000L, 115).cloneStats(DNS_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_BOOTS = register("dns_boots", () -> (com.hbm.items.armor.ArmorDNT) new com.hbm.items.armor.ArmorDNT(com.hbm.items.armor.ModArmorMaterials.DNS, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 1000000000L, 1000000L, 100000L, 115).cloneStats(DNS_HELMET.get()));
+	private static com.hbm.items.armor.ArmorDNT createDNS(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorDNT) new com.hbm.items.armor.ArmorDNT(com.hbm.items.armor.ModArmorMaterials.DNS, type, new Item.Properties(), 1000000000L, 1000000L, 100000L, 115)
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 9))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DIG_SPEED, 40, 7))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 2))
+				.setHasGeigerSound(true).enableVATS(true).enableThermalSight(true).setHasHardLanding(true).setRadResist(5.0D);
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_HELMET = register("dns_helmet", () -> createDNS(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_PLATE = register("dns_plate", () -> createDNS(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_LEGS = register("dns_legs", () -> createDNS(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorDNT> DNS_BOOTS = register("dns_boots", () -> createDNS(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 	// Power Armor: T-51
-	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_HELMET = register("t51_helmet", () -> (com.hbm.items.armor.ArmorT51) new com.hbm.items.armor.ArmorT51(com.hbm.items.armor.ModArmorMaterials.T51, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 1000000, 10000, 1000, 5)
-			.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(1.0D).addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 0)));
-	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_PLATE = register("t51_plate", () -> (com.hbm.items.armor.ArmorT51) new com.hbm.items.armor.ArmorT51(com.hbm.items.armor.ModArmorMaterials.T51, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 1000000, 10000, 1000, 5).cloneStats(T51_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_LEGS = register("t51_legs", () -> (com.hbm.items.armor.ArmorT51) new com.hbm.items.armor.ArmorT51(com.hbm.items.armor.ModArmorMaterials.T51, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 1000000, 10000, 1000, 5).cloneStats(T51_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_BOOTS = register("t51_boots", () -> (com.hbm.items.armor.ArmorT51) new com.hbm.items.armor.ArmorT51(com.hbm.items.armor.ModArmorMaterials.T51, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 1000000, 10000, 1000, 5).cloneStats(T51_HELMET.get()));
+	private static com.hbm.items.armor.ArmorT51 createT51(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorT51) new com.hbm.items.armor.ArmorT51(com.hbm.items.armor.ModArmorMaterials.T51, type, new Item.Properties(), 1000000, 10000, 1000, 5)
+				.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(1.0D).addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 0));
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_HELMET = register("t51_helmet", () -> createT51(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_PLATE = register("t51_plate", () -> createT51(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_LEGS = register("t51_legs", () -> createT51(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorT51> T51_BOOTS = register("t51_boots", () -> createT51(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 	// Power Armor: HEV Hazard Suit
-	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_HELMET = register("hev_helmet", () -> (com.hbm.items.armor.ArmorHEV) new com.hbm.items.armor.ArmorHEV(com.hbm.items.armor.ModArmorMaterials.HEV, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 1000000, 10000, 2500, 0)
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.MOVEMENT_SPEED, 40, 1))
-			.setRadResist(2.3D).setHasGeigerSound(true).setHasCustomGeiger(true));
-	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_PLATE = register("hev_plate", () -> (com.hbm.items.armor.ArmorHEV) new com.hbm.items.armor.ArmorHEV(com.hbm.items.armor.ModArmorMaterials.HEV, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 1000000, 10000, 2500, 0).cloneStats(HEV_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_LEGS = register("hev_legs", () -> (com.hbm.items.armor.ArmorHEV) new com.hbm.items.armor.ArmorHEV(com.hbm.items.armor.ModArmorMaterials.HEV, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 1000000, 10000, 2500, 0).cloneStats(HEV_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_BOOTS = register("hev_boots", () -> (com.hbm.items.armor.ArmorHEV) new com.hbm.items.armor.ArmorHEV(com.hbm.items.armor.ModArmorMaterials.HEV, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 1000000, 10000, 2500, 0).cloneStats(HEV_HELMET.get()));
+	private static com.hbm.items.armor.ArmorHEV createHEV(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorHEV) new com.hbm.items.armor.ArmorHEV(com.hbm.items.armor.ModArmorMaterials.HEV, type, new Item.Properties(), 1000000, 10000, 2500, 0)
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.MOVEMENT_SPEED, 40, 1))
+				.setRadResist(2.3D).setHasGeigerSound(true).setHasCustomGeiger(true);
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_HELMET = register("hev_helmet", () -> createHEV(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_PLATE = register("hev_plate", () -> createHEV(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_LEGS = register("hev_legs", () -> createHEV(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorHEV> HEV_BOOTS = register("hev_boots", () -> createHEV(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 	// Power Armor: Blackjack (BJ)
-	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_HELMET = register("bj_helmet", () -> (com.hbm.items.armor.ArmorBJ) new com.hbm.items.armor.ArmorBJ(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 10000000, 10000, 1000, 100)
+	private static com.hbm.items.armor.ArmorBJ createBJ(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorBJ) new com.hbm.items.armor.ArmorBJ(com.hbm.items.armor.ModArmorMaterials.BJ, type, new Item.Properties(), 10000000, 10000, 1000, 100)
+				.enableVATS(true).enableThermalSight(true).setHasHardLanding(true).setHasGeigerSound(true).setRadResist(1.0D)
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.MOVEMENT_SPEED, 40, 1))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.SATURATION, 40, 0));
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_HELMET = register("bj_helmet", () -> createBJ(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_PLATE = register("bj_plate", () -> createBJ(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorBJJetpack> BJ_PLATE_JETPACK = register("bj_plate_jetpack", () -> (com.hbm.items.armor.ArmorBJJetpack) new com.hbm.items.armor.ArmorBJJetpack(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 10000000, 10000, 1000, 100)
 			.enableVATS(true).enableThermalSight(true).setHasHardLanding(true).setHasGeigerSound(true).setRadResist(1.0D)
 			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.MOVEMENT_SPEED, 40, 1))
 			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
 			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.SATURATION, 40, 0)));
-	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_PLATE = register("bj_plate", () -> (com.hbm.items.armor.ArmorBJ) new com.hbm.items.armor.ArmorBJ(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 10000000, 10000, 1000, 100).cloneStats(BJ_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorBJJetpack> BJ_PLATE_JETPACK = register("bj_plate_jetpack", () -> (com.hbm.items.armor.ArmorBJJetpack) new com.hbm.items.armor.ArmorBJJetpack(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 10000000, 10000, 1000, 100).cloneStats(BJ_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_LEGS = register("bj_legs", () -> (com.hbm.items.armor.ArmorBJ) new com.hbm.items.armor.ArmorBJ(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 10000000, 10000, 1000, 100).cloneStats(BJ_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_BOOTS = register("bj_boots", () -> (com.hbm.items.armor.ArmorBJ) new com.hbm.items.armor.ArmorBJ(com.hbm.items.armor.ModArmorMaterials.BJ, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 10000000, 10000, 1000, 100).cloneStats(BJ_HELMET.get()));
+	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_LEGS = register("bj_legs", () -> createBJ(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorBJ> BJ_BOOTS = register("bj_boots", () -> createBJ(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 	// Power Armor: AJR
-	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_HELMET = register("ajr_helmet", () -> (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties(), 2500000, 10000, 2000, 25)
-			.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(1.3D)
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
-			.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 0)));
-	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_PLATE = register("ajr_plate", () -> (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties(), 2500000, 10000, 2000, 25).cloneStats(AJR_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_LEGS = register("ajr_legs", () -> (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties(), 2500000, 10000, 2000, 25).cloneStats(AJR_HELMET.get()));
-	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_BOOTS = register("ajr_boots", () -> (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties(), 2500000, 10000, 2000, 25).cloneStats(AJR_HELMET.get()));
+	private static com.hbm.items.armor.ArmorAJR createAJR(net.minecraft.world.item.ArmorItem.Type type) {
+		return (com.hbm.items.armor.ArmorAJR) new com.hbm.items.armor.ArmorAJR(com.hbm.items.armor.ModArmorMaterials.AJR, type, new Item.Properties(), 2500000, 10000, 2000, 25)
+				.enableVATS(true).setHasGeigerSound(true).setHasHardLanding(true).setRadResist(1.3D)
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.JUMP, 40, 0))
+				.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST, 40, 0));
+	}
+	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_HELMET = register("ajr_helmet", () -> createAJR(net.minecraft.world.item.ArmorItem.Type.HELMET));
+	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_PLATE = register("ajr_plate", () -> createAJR(net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_LEGS = register("ajr_legs", () -> createAJR(net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+	public static final DeferredItem<com.hbm.items.armor.ArmorAJR> AJR_BOOTS = register("ajr_boots", () -> createAJR(net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
 
 	// Designators & Targeting
@@ -1112,6 +1137,18 @@ public class ModItems {
 	public static Item fmn;
 	public static Item five_htp;
 	public static Item chocolate;
+	public static Item gun_9mm;
+	public static Item gun_44;
+	public static Item gun_50bmg;
+	public static Item gun_12ga;
+	public static Item gun_fatman;
+	public static Item ammo_9mm;
+	public static Item ammo_44;
+	public static Item ammo_50bmg;
+	public static Item ammo_12ga;
+	public static Item ammo_mini_nuke;
+	public static Item grenade_generic;
+	public static Item grenade_nuclear;
 
 	public static void register(IEventBus bus) {
 		ITEMS.register(bus);
@@ -1370,6 +1407,19 @@ public class ModItems {
 		marshmallow = MARSHMALLOW.get();
 		marshmallow_roasted = MARSHMALLOW_ROASTED.get();
 		designator = DESIGNATOR.get();
+
+		gun_9mm = GUN_9MM.get();
+		gun_44 = GUN_44.get();
+		gun_50bmg = GUN_50BMG.get();
+		gun_12ga = GUN_12GA.get();
+		gun_fatman = GUN_FATMAN.get();
+		ammo_9mm = AMMO_9MM.get();
+		ammo_44 = AMMO_44.get();
+		ammo_50bmg = AMMO_50BMG.get();
+		ammo_12ga = AMMO_12GA.get();
+		ammo_mini_nuke = AMMO_MINI_NUKE.get();
+		grenade_generic = GRENADE_GENERIC.get();
+		grenade_nuclear = GRENADE_NUCLEAR.get();
 
 		ams_core_sing = AMS_CORE_SING.get();
 		ams_core_wormhole = AMS_CORE_WORMHOLE.get();

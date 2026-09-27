@@ -8622,5 +8622,15 @@
   "weapon.elecGun.glass_cannon.uv": "Ультрафиолет",
   "weapon.elecGun.glass_cannon.visible": "Видимый свет",
   "weapon.elecGun.glass_cannon.xray": "Рентген",
-  "weapon.elecGun.modeChange": "Режим стрельбы:"
+  "weapon.elecGun.modeChange": "Режим стрельбы:",
+  "itemGroup.tabBlocks": "NTM: Блоки",
+  "itemGroup.tabResource": "NTM: Ресурсы и материалы",
+  "itemGroup.tabParts": "NTM: Детали механизмов",
+  "itemGroup.tabControl": "NTM: Управление реактором и электроника",
+  "itemGroup.tabMachine": "NTM: Механизмы и промышленность",
+  "itemGroup.tabNuke": "NTM: Ядерное оружие и взрывчатка",
+  "itemGroup.tabMissile": "NTM: Ракеты и ракетостроение",
+  "itemGroup.tabWeapon": "NTM: Оружие и боеприпасы",
+  "itemGroup.tabConsumable": "NTM: Медицина и расходники",
+  "itemGroup.tabTemplate": "NTM: Шаблоны и чертежи"
 }
